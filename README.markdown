@@ -1,4 +1,5 @@
-=== Daniel Wiener ===
+Daniel Wiener
+=============
 
 Using the starter theme -  _s, or underscores - I am reworking, updating the theme for my website - danielwiener.com - so that it will be easier to work on, change design, etc. I am also going to integrate the art portfolio section made with CakePHP and this Wordpress section.
 
