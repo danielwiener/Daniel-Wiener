@@ -16,8 +16,10 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+	<?php if ( is_search() || is_archive() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+		<?php the_post_thumbnail('thumbnail', array('class' => 'alignleft', 'title' => get_the_title() )); ?></a>
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php else : ?>
