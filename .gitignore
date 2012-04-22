@@ -1,0 +1,17 @@
+.DS_Store?
+.htaccess
+/uploads/*
+/plugins/*
+/upgrade/*
+/toc/*
+/themes/twentyten/*
+/themes/twentyeleven/*
+/themes/classic/*
+/themes/daniel/*
+/themes/default/*
+/themes/gridfocus/*
+/themes/thematic/*
+index.php
+/themes/index.php
+/themes/danielwiener/lib/metabox
+_s_readme_tmp.txt
