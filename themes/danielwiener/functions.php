@@ -126,6 +126,69 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
+ * Sets the post excerpt length to 40 characters.
+ *
+ * To override this length in a child theme, remove the filter and add your own
+ * function tied to the excerpt_length filter hook.
+ *
+ * @since Daniel Wiener 1.0
+ * @return int
+ */
+function dw_excerpt_length( $length ) {
+	return 50;
+}
+add_filter( 'excerpt_length', 'dw_excerpt_length' );
+
+/**
+ * Returns a "Continue Reading" link for excerpts
+ *
+ * @since Daniel Wiener 1.0
+ * @return string "Continue Reading" link
+ */
+function dw_continue_reading_link() {
+	return ' <a href="'. get_permalink() . '">' . __( '<br />Read More', 'dw' ) . '</a>';
+}
+
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and dw_continue_reading_link().
+ *
+ * To override this in a child theme, remove the filter and add your own
+ * function tied to the excerpt_more filter hook.
+ *
+ * @since Daniel Wiener 1.0
+ * @return string An ellipsis
+ */
+function dw_auto_excerpt_more( $more ) {
+	return ' &hellip;' . dw_continue_reading_link();
+}
+add_filter( 'excerpt_more', 'dw_auto_excerpt_more' );
+
+/**
+ * Adds a pretty "Continue Reading" link to custom post excerpts.
+ *
+ * To override this link in a child theme, remove the filter and add your own
+ * function tied to the get_the_excerpt filter hook.
+ *
+ * @since Daniel Wiener 1.0
+ * @return string Excerpt with a pretty "Continue Reading" link
+ */
+function dw_custom_excerpt_more( $output ) {
+	if ( has_excerpt() && ! is_attachment() ) {
+		$output .= dw_continue_reading_link();
+	}
+	return $output;
+}
+add_filter( 'get_the_excerpt', 'dw_custom_excerpt_more' );
+
+/**
+ * Remove inline styles printed when the gallery shortcode is used.
+ *
+ *
+ * @since Daniel Wiener 1.0
+ */
+add_filter( 'use_default_gallery_style', '__return_false' );
+
+/**
  * Implement the Custom Header feature
  */
 //require( get_template_directory() . '/inc/custom-header.php' );

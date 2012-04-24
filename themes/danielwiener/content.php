@@ -20,7 +20,8 @@
 	<div class="entry-summary">
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 		<?php the_post_thumbnail('thumbnail', array('class' => 'alignleft', 'title' => get_the_title() )); ?></a>
-		<?php the_excerpt(); ?>
+		<?php the_excerpt(); ?> 
+	   
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
@@ -37,7 +38,7 @@
 				if ( $categories_list && _s_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', '_s' ), $categories_list ); ?>
+				<?php printf( __( '%1$s', '_s' ), $categories_list ); ?>
 			</span>
 			<span class="sep"> | </span>
 			<?php endif; // End if categories ?>
@@ -61,4 +62,5 @@
 
 		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- #entry-meta -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-<?php the_ID(); ?> --> 
+ <hr />

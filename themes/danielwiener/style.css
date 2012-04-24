@@ -503,6 +503,10 @@ hgroup {
 	clear: both;
 	font-size: 11px;
 	margin: 0 0 0 5px;
+}  
+
+footer.entry-meta {
+	margin: 10px 0 0 5px;
 }
 .entry-meta:before {
 	content:"--";
@@ -518,9 +522,17 @@ hgroup {
 .group-blog .byline {
 	display: inline;
 }
-.entry-content,
-.entry-summary {
+.entry-content {
 	margin: 1.5em 0 0;
+} 
+
+.entry-summary {
+	margin: .8em 0 0 0;
+	padding: .5em;
+	/*border: 1px solid #CC6600;*/
+	min-height: 205px;
+	display: block;
+	/*background: #fff;*/
 }
 .page-links {
 	clear: both;
