@@ -745,3 +745,24 @@ h1.widget-title {
 #searchsubmit {
 	display: none;
 }
+
+/* =Footer
+----------------------------------------------- */  
+.site-footer {
+/*	height: 50px;*/
+	background: #000;
+	color: #fff;
+	font-size: 12px; 
+	   line-height: 40px;  
+}  
+
+.site-footer a:link, .site-footer a:visited { 
+	color: #ccc;
+	}
+	
+div.site-info {
+  	margin: 0 auto;
+	width: 960px;
+	/*border: 1px solid #999;*/
+ 
+}

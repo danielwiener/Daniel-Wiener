@@ -19,7 +19,12 @@
 	<?php if ( is_search() || is_archive() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-		<?php the_post_thumbnail('thumbnail', array('class' => 'alignleft', 'title' => get_the_title() )); ?></a>
+			<?php if(has_post_thumbnail()): ?>
+		<?php the_post_thumbnail('thumbnail', array('class' => 'alignleft', 'title' => get_the_title() )); ?>
+		<?php else: ?>
+			<img src="/is/wp-content/toc/<?php echo $post->post_name; ?>.jpg" width="200" border="0" class="alignleft" />
+		<?php endif; ?>
+			</a>
 		<?php the_excerpt(); ?> 
 	   
 	</div><!-- .entry-summary -->
@@ -49,7 +54,7 @@
 				if ( $tags_list ) :
 			?>
 			<span class="tag-links">
-				<?php printf( __( 'Tagged %1$s', '_s' ), $tags_list ); ?>
+				<?php printf( __( ' %1$s', '_s' ), $tags_list ); ?>
 			</span>
 			<span class="sep"> | </span>
 			<?php endif; // End if $tags_list ?>

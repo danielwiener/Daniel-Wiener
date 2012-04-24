@@ -11,16 +11,16 @@
 
 	</div><!-- #main -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( '_s_credits' ); ?>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_s' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', '_s' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- .site-footer .site-footer -->
+
 </div><!-- #page .hfeed .site --> 
-</div><!-- #container -->
+</div><!-- #container --> 
+<footer id="colophon" class="site-footer" role="contentinfo">
+	<div class="site-info">
+		<?php do_action( '_s_credits' ); ?>
+		<a href="/is">Daniel Wiener</a> <span class="sep"> | </span> &copy;1982 - <?php echo date('Y'); ?> <span class="sep"> | </span>
+		<a href="http://wordpress.org/" title="Site is created using Wordpress, designed by Daniel Wiener starting with the _s theme by Automattic" rel="generator">Credits</a>
+	</div><!-- .site-info -->
+</footer><!-- .site-footer .site-footer -->
 
 <?php wp_footer(); ?>
 
