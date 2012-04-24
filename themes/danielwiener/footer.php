@@ -9,11 +9,10 @@
  */
 ?>
 
-	</div><!-- #main -->
-
-
+	</div><!-- #main -->  
 </div><!-- #page .hfeed .site --> 
-</div><!-- #container --> 
+</div><!-- #container -->
+<?php get_template_part('subfooter'); ?> 
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="site-info">
 		<?php do_action( '_s_credits' ); ?>
