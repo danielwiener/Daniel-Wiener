@@ -186,7 +186,20 @@ add_filter( 'get_the_excerpt', 'dw_custom_excerpt_more' );
  *
  * @since Daniel Wiener 1.0
  */
-add_filter( 'use_default_gallery_style', '__return_false' );
+add_filter( 'use_default_gallery_style', '__return_false' ); 
+
+function add_more_buttons($buttons) {
+ $buttons[] = 'hr';
+ $buttons[] = 'del';
+ $buttons[] = 'sub';
+ $buttons[] = 'sup';
+ $buttons[] = 'fontselect';
+ $buttons[] = 'fontsizeselect';
+ $buttons[] = 'cleanup';
+ $buttons[] = 'styleselect';
+ return $buttons;
+}
+add_filter("mce_buttons_3", "add_more_buttons");
 
 /**
  * Implement the Custom Header feature
