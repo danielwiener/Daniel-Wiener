@@ -421,7 +421,7 @@ hgroup {
 /* =Menu
 ----------------------------------------------- */   
 .menu-primary-menu-container { 
-	line-height: 38px;
+/*	line-height: 42px;*/
 	padding: 0 0 0 30px;
 
 }
@@ -441,13 +441,14 @@ hgroup {
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
-	padding-left: 0;
-	
+	padding: 10px 0 0 0;
+	/*border: 1px solid red;*/	
 }
 .main-navigation li {
 	float: left;
 	position: relative;
-	padding: 0 18px 0 0;  
+	padding: 0 0px 0 0;
+    margin: 0 18px 0 0;
  
 }
 .main-navigation a {
@@ -464,30 +465,41 @@ hgroup {
 		top: 1.5em;
 		left: 0;
 	z-index: 99999;
+	padding: 0 0 0 0;
+	
+	opacity:0.8;
+		-moz-opacity: 0.8;
+		filter:alpha(opacity=0.8);
 }
 .main-navigation ul ul ul {
 	left: 100%;
 	top: 0;
 }
 .main-navigation ul ul a {
-	width: 200px;
+    width: 200px; 
+	padding: 5px;
 }
 .main-navigation ul ul li {
-	background: #999; 
-	padding: 5px;
+	background: #B2997F; 
 	border-bottom: 1px solid #fff;
 }
 .main-navigation li:hover > a {
 }
 .main-navigation ul ul :hover > a {
+	background: #94704C;
+	width: 200px;
 }
-.main-navigation ul ul a:hover {
+.main-navigation ul ul li a:hover { 
+			
+
 }
 .main-navigation ul li:hover > ul {
-	display: block;
+	display: block; 
 }
 .main-navigation li.current_page_item a,
 .main-navigation li.current-menu-item a {
+	color: #000;
+	
 }
 
 /* Small menu */
