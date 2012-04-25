@@ -846,3 +846,12 @@ div.site-info {
 	/*border: 1px solid #999;*/
  
 }
+
+/* =Images More DW
+-------------------------------------------------------------- */
+
+	.slide_container {
+		height: 450px;
+		overflow: hidden;
+		display: block;
+	}

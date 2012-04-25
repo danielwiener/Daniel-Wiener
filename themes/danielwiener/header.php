@@ -40,8 +40,10 @@
 <![endif]-->
 <script type="text/javascript" src="http://use.typekit.com/ogu3erd.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-<?php wp_head(); ?>
+   
+<?php wp_head(); ?>  
+<link rel="stylesheet" type="text/css" media="all" href="http://danielwiener.dev/is/wp-content/themes/danielwiener/css/tabs_slideshow.css" />
+<script type="text/javascript" src="http://danielwiener.dev/is/wp-content/themes/danielwiener/js/jquery.tools.min.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
