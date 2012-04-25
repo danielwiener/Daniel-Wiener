@@ -2,8 +2,8 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package _s
- * @since _s 1.0
+ * @package Daniel Wiener
+ * @since Daniel Wiener 1.0
  */
 
 get_header(); ?>

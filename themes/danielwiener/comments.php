@@ -7,8 +7,8 @@
  * handled by a callback to _s_comment() which is
  * located in the functions.php file.
  *
- * @package _s
- * @since _s 1.0
+ * @package Daniel Wiener
+ * @since Daniel Wiener 1.0
  */
 ?>
 	<div id="comments" class="comments-area">

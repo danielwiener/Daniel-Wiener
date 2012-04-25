@@ -4,8 +4,8 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package _s
- * @since _s 1.0
+ * @package Daniel Wiener
+ * @since Daniel Wiener 1.0
  */
 
 if ( ! function_exists( '_s_content_nav' ) ):

@@ -11,4 +11,16 @@ Using the starter theme -  _s, or underscores - I am reworking, updating the the
 
 - Working on this for a while but just put it into Git...
 
+- typekit and headlines
+
+***  
+
+##April 23 and 24, 2012## 
+
+- read more for excerpts
+
+- added footer and subfooter
+
+- aligned and styled menu
+
 ***

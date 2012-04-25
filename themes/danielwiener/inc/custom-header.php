@@ -13,8 +13,8 @@
 	<?php } // if ( ! empty( $header_image ) ) ?>
 
  *
- * @package _s
- * @since _s 1.0
+ * @package Daniel Wiener
+ * @since Daniel Wiener 1.0
  */
 
 function _s_custom_header_setup() {

@@ -4,8 +4,8 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package _s
- * @since _s 1.0
+ * @package Daniel Wiener
+ * @since Daniel Wiener 1.0
  */
 ?>
 
