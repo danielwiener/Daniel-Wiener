@@ -26,7 +26,7 @@ function _s_content_nav( $nav_id ) {
 		<h1 class="assistive-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
-		<?php $prev_post = get_adjacent_post(true, '', true);
+		<?php $prev_post = get_adjacent_post(true, '', true); //($in_category, $exclude category, $previous [that is why it is false for Next])
 	    $next_post = get_adjacent_post( true, '', false );  
 		$prev_post_id = $prev_post->ID;
 	    $next_post_id = $next_post->ID;
@@ -39,7 +39,7 @@ function _s_content_nav( $nav_id ) {
 		   $next_short_title = '%title';
 		}?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', '_s' ) . '</span> '    . $prev_short_title, TRUE ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', '_s' ) . '</span> '    . $prev_short_title, TRUE ); // the TRUE is to say it is in the same category?>
 		<?php next_post_link( '<div class="nav-next">%link</div>', ' ' . $next_short_title . ' <span class="meta-nav">' . _x( '&rarr;', 'Next post link', '_s' ) . '</span>', TRUE ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>

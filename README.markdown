@@ -23,4 +23,12 @@ Using the starter theme -  _s, or underscores - I am reworking, updating the the
 
 - aligned and styled menu
 
-***
+*** 
+
+##April 25 - 28, 2012## 
+
+- worked on front page slide show, with sticky posts
+- added short title, and use short_title in prev/next nav for single.php
+
+*** 
+  
