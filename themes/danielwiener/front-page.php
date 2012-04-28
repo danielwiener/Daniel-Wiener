@@ -67,7 +67,8 @@ get_header(); ?>
 						rotate: true
 
 					// use the slideshow plugin. It accepts its own configuration
-					}).slideshow({autoplay:true});
+					}).slideshow({ interval: 5000} );
+					setTimeout('$(".slidetabs").data("slideshow").play();', 2000);
 					});
 					</script>
 

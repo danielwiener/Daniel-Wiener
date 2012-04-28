@@ -35,6 +35,7 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="stylesheet" type="text/css" media="all" href="http://danielwiener.dev/is/wp-content/themes/danielwiener/css/tabs_slideshow.css" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
@@ -42,8 +43,8 @@
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
    
 <?php wp_head(); ?>  
-<link rel="stylesheet" type="text/css" media="all" href="http://danielwiener.dev/is/wp-content/themes/danielwiener/css/tabs_slideshow.css" />
-<script type="text/javascript" src="http://danielwiener.dev/is/wp-content/themes/danielwiener/js/jquery.tools.min.js"></script>
+
+
 </head>
 
 <body <?php body_class(); ?>>

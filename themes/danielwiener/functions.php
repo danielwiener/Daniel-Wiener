@@ -105,13 +105,24 @@ add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
  * Enqueue scripts and styles
- */
+ */  
+// smart jquery inclusion 
+//http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/ 
+
 function _s_scripts() {
 	global $post;
 
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'jquery' );
+	
+	   wp_register_script('jquery_tools',
+	       // get_bloginfo('stylesheet_directory') . '/js/jquery.tools.min.js', 
+			'http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js',
+	       array('jquery'),
+	       '1.0' );
+	   // enqueue the script
+	   wp_enqueue_script('jquery_tools');
 
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', 'jquery', '20120206', true );
 
