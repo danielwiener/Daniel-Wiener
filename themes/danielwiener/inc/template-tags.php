@@ -26,9 +26,21 @@ function _s_content_nav( $nav_id ) {
 		<h1 class="assistive-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
+		<?php $prev_post = get_adjacent_post(true, '', true);
+	    $next_post = get_adjacent_post( true, '', false );  
+		$prev_post_id = $prev_post->ID;
+	    $next_post_id = $next_post->ID;
+	    $prev_short_title = get_post_meta($prev_post_id, '_dw_short_title', true);
+		if( $prev_short_title == '') {
+		   $prev_short_title = '%title';
+		}
+	    $next_short_title = get_post_meta($next_post_id, '_dw_short_title', true);  
+		if( $next_short_title == '') {
+		   $next_short_title = '%title';
+		}?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', '_s' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', '_s' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', '_s' ) . '</span> '    . $prev_short_title, TRUE ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', ' ' . $next_short_title . ' <span class="meta-nav">' . _x( '&rarr;', 'Next post link', '_s' ) . '</span>', TRUE ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
