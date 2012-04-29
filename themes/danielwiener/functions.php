@@ -107,7 +107,8 @@ add_action( 'widgets_init', '_s_widgets_init' );
  * Enqueue scripts and styles
  */  
 // smart jquery inclusion 
-//http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/ 
+//http://digwp.com/2010/03/wordpress-functions-php-template-custom-functions/   
+
 
 function _s_scripts() {
 	global $post;

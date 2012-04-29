@@ -54,7 +54,7 @@ get_header(); ?>
 
 					<script language="JavaScript">
 					// What is $(document).ready ? See: http://flowplayer.org/tools/documentation/basics.html#document_ready
-					jQuery.noConflict();
+					//jQuery.noConflict();
 					jQuery(function()  {
 
 					jQuery(".slidetabs").tabs(".images > div", {
