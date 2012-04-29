@@ -374,11 +374,11 @@ a:active {
 	padding: 10px; 
 	clear: both; 
 	margin-top: 30px;
-    background-color: #DCDCDE; 
+    background-color: rgba(220, 220, 222, 0.8); 
    	   
-	opacity:0.8;
-		-moz-opacity: 0.8;
-		filter:alpha(opacity=0.8);
+  /*  	opacity:0.8;
+  		-moz-opacity: 0.8;
+  		filter:alpha(opacity=0.8);*/ 
 	border: 1px solid black;
 	width:  700px; 
 	/*display: block;*/

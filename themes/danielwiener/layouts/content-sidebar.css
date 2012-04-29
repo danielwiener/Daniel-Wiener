@@ -18,11 +18,11 @@ Layout: Content-Sidebar
 	float: right;
 	overflow: hidden;
 	width: 23%;
-	background-color: #DCDCDE; 
-	border: 1px solid #444444;
-	opacity: 0.8;
-	-moz-opacity: 0.8;
-	filter:alpha(opacity=0.8);
+	background-color: rgba(220, 220, 222, 0.8); 
+	border: 1px solid black;
+   /* opacity: 0.8;
+   	-moz-opacity: 0.8;
+   	filter:alpha(opacity=0.8);*/ 
 	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 	 	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
