@@ -192,6 +192,27 @@ function dw_custom_excerpt_more( $output ) {
 }
 add_filter( 'get_the_excerpt', 'dw_custom_excerpt_more' );   
 
+function dw_posts_by_category($dw_slug) {
+	global $post; // required
+	  $dw_category = get_category_by_slug( $dw_slug );
+	  $dw_category_link = get_category_link($dw_category->term_id);
+	 ?> 
+	<aside id="?" class="widget"><h1 class="widget-title"><a href="<?php echo esc_url( $dw_category_link); ?>"><?php echo $dw_category->name; ?></a></h1><ul>
+	<?php 
+    // stdClass Object ( [term_id] => 23 [name] => Exhibitions [slug] => exhibitions [term_group] => 0 [term_taxonomy_id] => 23 [taxonomy] => category [description] => [parent] => 0 [count] => 6 [cat_ID] => 23 [category_count] => 6 [category_description] => [cat_name] => Exhibitions [category_nicename] => exhibitions [category_parent] => 0 )
+	
+	$args = array(
+		'category_name' 	=> "$dw_slug", //by category slug
+		'posts_per_page' 	=> -1  	   
+	); 
+	$custom_posts = get_posts($args);
+		foreach($custom_posts as $post) : setup_postdata($post);
+		$dw_title = get_post_meta($post->ID, '_dw_short_title', true) ? get_post_meta($post->ID, '_dw_short_title', true) : get_the_title(); ?>
+		 <li><a href="<?php the_permalink(); ?>" class="post-title" title="Read about <?php echo $dw_title ?>"><?php echo $dw_title; ?></a></li>
+		<?php endforeach;?>
+			</ul></aside>
+		<?php 
+}
 
 /**
  * Include and setup custom metaboxes and fields.

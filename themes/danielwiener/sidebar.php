@@ -8,6 +8,15 @@
 ?>
 		<div id="secondary" class="widget-area" role="complementary">
 			<?php do_action( 'before_sidebar' ); ?>
+			<aside id="search" class="widget widget_search">
+				<?php get_search_form(); ?>
+			</aside> 
+			<?php dw_posts_by_category('news');
+			dw_posts_by_category('exhibitions');
+			dw_posts_by_category('open_source_sculpture');
+			dw_posts_by_category('sculptors');
+			 ?>
+			
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
 				<aside id="search" class="widget widget_search">
