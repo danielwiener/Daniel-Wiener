@@ -5,11 +5,12 @@
 	position:relative;	
 	height:480px;
 	
-	width:675px;
+	width:100%;
 	float:left;	
 	margin:0;
 	padding: 0;
 	cursor:pointer;
+	/*border: 1px solid red;*/
 	
 	/* CSS3 tweaks for modern browsers */
 /*	-moz-border-radius:5px;
