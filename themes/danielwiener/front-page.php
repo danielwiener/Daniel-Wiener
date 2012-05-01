@@ -14,8 +14,8 @@
 get_header(); ?>
  
 
-		<div id="primary" class="site-content">
-			<div id="content" role="main">
+		<div id="front-page" class="site-content">
+			<div  role="main">
 
 					<div class="images">
 						<?php
@@ -28,7 +28,7 @@ get_header(); ?>
 
 						<div>
 									<?php if(has_post_thumbnail()): ?>
-										<a href="<?php the_permalink(); ?>"  class="slide_container"><?php the_post_thumbnail('large'); ?></a>
+										<a href="<?php the_permalink(); ?>"  class="slide_container"><?php the_post_thumbnail('full'); ?></a>
 										<?php endif; ?>
 										<h4><?php echo $current_category[0]->cat_name; ?> >> <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"> <?php the_title(); ?><?php if(get_post_meta($post->ID, "Date", $single = true) != "") {
 										$visiting_artist_date = get_post_meta($post->ID, "Date", $single = true);
@@ -75,5 +75,5 @@ get_header(); ?>
 			</div><!-- #content -->
 		</div><!-- #primary .site-content -->
 
-<?php get_sidebar(); ?>
+<?php // get_sidebar(); ?>
 <?php get_footer(); ?>
