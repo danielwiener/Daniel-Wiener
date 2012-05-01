@@ -385,6 +385,23 @@ a:active {
 	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 	 	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+} 
+
+#front-page {
+	padding: 10px; 
+	clear: both; 
+	margin-top: 30px;
+    background-color: rgba(220, 220, 222, 0.8); 
+   	   
+  /*  	opacity:0.8;
+  		-moz-opacity: 0.8;
+  		filter:alpha(opacity=0.8);*/ 
+	border: 1px solid black;
+	width:  940px; 
+	/*display: block;*/
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	 	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 /*div.decoration { 
