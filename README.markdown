@@ -30,5 +30,13 @@ Using the starter theme -  _s, or underscores - I am reworking, updating the the
 - worked on front page slide show, with sticky posts
 - added short title, and use short_title in prev/next nav for single.php
 
+***
+
+##May 4, 2012## 
+
+- finalized front page slide show, with sticky posts
+- solved conflict between handmade front page slide show and Fancybox by using the plugin Easy FancyBox
+- set up root index.php outside of WP folder to be the same as the WP front page
+
 *** 
   
