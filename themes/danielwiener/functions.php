@@ -87,6 +87,35 @@ endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
+ * Adds theme/plugin custom images sizes added with add_image_size() to the image uploader/editor.  This 
+ * allows users to insert these images within their post content editor.
+ *
+ * @since Hybrid 1.3.0 - taken from Hybrid
+ * @access private
+ * @param array $sizes Selectable image sizes.
+ * @return array $sizes
+ */
+function dw_image_size_names_choose( $sizes ) {
+
+	/* Get all intermediate image sizes. */
+	$intermediate_sizes = get_intermediate_image_sizes();
+	$add_sizes = array();
+
+	/* Loop through each of the intermediate sizes, adding them to the $add_sizes array. */
+	foreach ( $intermediate_sizes as $size )
+		$add_sizes[$size] = $size;
+
+	/* Merge the original array, keeping it intact, with the new array of image sizes. */
+	$sizes = array_merge( $add_sizes, $sizes );
+
+	/* Return the new sizes plus the old sizes back. */
+	return $sizes;
+}
+/* Add all image sizes to the image editor to insert into post. */
+add_filter( 'image_size_names_choose', 'dw_image_size_names_choose' );
+
+
+/**
  * Register widgetized area and update sidebar with default widgets
  *
  * @since _s 1.0
@@ -302,3 +331,20 @@ add_filter("mce_buttons_3", "add_more_buttons");
  * Implement the Custom Header feature
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
+// add google analytics to footer
+function add_google_analytics() {
+echo '<script type="text/javascript">';
+echo "\n";
+echo '  var _gaq = _gaq || [];';
+echo '  _gaq.push(["_setAccount", "UA-11392590-1"]);';
+echo '  _gaq.push(["_trackPageview"]);';
+echo "\n";
+echo '  (function() {';
+echo '    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;';
+echo '    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";';
+echo '    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);';
+echo '  })();';
+echo "\n";
+echo '</script>';
+}
+add_action('wp_footer', 'add_google_analytics');
