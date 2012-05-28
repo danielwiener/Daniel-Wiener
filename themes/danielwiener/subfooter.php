@@ -112,7 +112,6 @@ La Mesa, CA
 
 
 </div><br clear="both"/>
-<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script></div>
-<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/dwnr11217.json?callback=twitterCallback2&amp;count=5"></script>
+
 </div><!-- subfooter page end-->
 </div><!-- subfooter end-->
