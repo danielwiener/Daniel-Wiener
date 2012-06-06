@@ -86,6 +86,69 @@ function _s_setup() {
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
 
+add_action('init', 'dw_custom_init');
+function dw_custom_init() 
+{  
+   /* BEGIN Title Post Type*/ 
+  $labels = array(
+    'name' => _x('Titles', 'post type general name'),
+    'singular_name' => _x('Title', 'post type singular name'),
+    'add_new' => _x('Add New', 'titles'),
+    'add_new_item' => __('Add New Title'),
+    'edit_item' => __('Edit Title'),
+    'edit' => _x('Edit', 'essays'),
+    'new_item' => __('New Title'),
+    'view_item' => __('View Title'),
+    'search_items' => __('Search Titles'),
+    'not_found' =>  __('No Titles found'),
+    'not_found_in_trash' => __('No Titles found in Trash'), 
+    'view' =>  __('View Title'),
+    'parent_item_colon' => ''
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'query_var' => true, 
+    'capability_type' => 'post',
+   /* 'taxonomies' => array( 'post_tag', 'category'), */
+    'hierarchical' => false,
+    'can_export' => true,
+    'menu_position' => 5,
+    'show_in_nav_menus' => true,
+	'has_archive' => true,
+    'rewrite' => true,
+    'supports' => array('title','editor','thumbnail','excerpt','comments','revisions')
+  ); 
+  register_post_type('titles',$args);
+}
+
+/*--- Custom Messages - title_updated_messages ---*/
+ add_filter('post_updated_messages', 'title_updated_messages');
+ 
+ function title_updated_messages( $messages ) {
+   global $post, $post_ID;
+
+   $messages['titles'] = array(
+   0 => '', // Unused. Messages start at index 1.
+   1 => sprintf( __('Title updated. <a href="%s">View Title</a>'), esc_url( get_permalink($post_ID) ) ),
+   2 => __('Custom field updated.'),
+   3 => __('Custom field deleted.'),
+   4 => __('Title updated.'),
+   /* translators: %s: date and time of the revision */
+   5 => isset($_GET['revision']) ? sprintf( __('Title restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+   6 => sprintf( __('Title published. <a href="%s">View Title</a>'), esc_url( get_permalink($post_ID) ) ),
+   7 => __('Title saved.'),
+   8 => sprintf( __('Title submitted. <a target="_blank" href="%s">Preview Title</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+   9 => sprintf( __('Title scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Title</a>'),
+     // translators: Publish box date format, see http://php.net/date
+     date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+   10 => sprintf( __('Title draft updated. <a target="_blank" href="%s">Preview Title</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+   );
+
+   return $messages;
+ }
 /**
  * Adds theme/plugin custom images sizes added with add_image_size() to the image uploader/editor.  This 
  * allows users to insert these images within their post content editor.
@@ -286,6 +349,29 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 				'type' => 'text',
 			),  		
 		),
+	);
+		
+		$dw_meta_boxes[] = array(
+			'id'         => 'titles_metabox',
+			'title'      => 'Titles Info',
+			'pages'      => array( 'titles'), // Post type
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' => 'Former Name',
+					'desc' => 'Enter the working title or former name of the piece',
+					'id'   => $prefix . 'former_name',
+					'type' => 'text',
+				),
+				array(
+					'name' => 'URL of Sculpture',
+					'desc' => 'Enter the <u>relative url</u> of the sculpture. http://danielwiener.dev or .com is included.',
+					'id'   => $prefix . 'sculpture_url',
+					'type' => 'text',
+				),
+			),
 	);
 
 
