@@ -30,6 +30,11 @@ function _s_setup() {
 	 * Custom template tags for this theme.
 	 */
 	require( get_template_directory() . '/inc/template-tags.php' );
+	
+	/**
+	 * Custom taxonomies for this theme.
+	 */
+	require( get_template_directory() . '/inc/dw_custom_taxonomies.php' );
 
 	/**
 	 * Custom functions that act independently of the theme templates
@@ -96,13 +101,47 @@ function dw_custom_init()
     'add_new' => _x('Add New', 'titles'),
     'add_new_item' => __('Add New Title'),
     'edit_item' => __('Edit Title'),
-    'edit' => _x('Edit', 'essays'),
+    'edit' => _x('Edit', 'titles'),
     'new_item' => __('New Title'),
     'view_item' => __('View Title'),
     'search_items' => __('Search Titles'),
     'not_found' =>  __('No Titles found'),
     'not_found_in_trash' => __('No Titles found in Trash'), 
     'view' =>  __('View Title'),
+    'parent_item_colon' => ''
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'query_var' => true, 
+    'capability_type' => 'post',
+   'taxonomies' => array( 'venues'),
+    'hierarchical' => false,
+    'can_export' => true,
+    'menu_position' => 5,
+    'show_in_nav_menus' => true,
+	'has_archive' => true,
+    'rewrite' => true,
+    'supports' => array('title','editor','thumbnail','excerpt','comments','revisions')
+  ); 
+  register_post_type('titles',$args);
+
+   /* BEGIN Sculptor Post Type*/ 
+  $labels = array(
+    'name' => _x('Sculptors', 'post type general name'),
+    'singular_name' => _x('Sculptor', 'post type singular name'),
+    'add_new' => _x('Add New', 'sculptors'),
+    'add_new_item' => __('Add New Sculptor'),
+    'edit_item' => __('Edit Sculptor'),
+    'edit' => _x('Edit', 'sculptors'),
+    'new_item' => __('New Sculptor'),
+    'view_item' => __('View Sculptor'),
+    'search_items' => __('Search Sculptors'),
+    'not_found' =>  __('No Sculptors found'),
+    'not_found_in_trash' => __('No Sculptors found in Trash'), 
+    'view' =>  __('View Sculptor'),
     'parent_item_colon' => ''
   );
   $args = array(
@@ -121,8 +160,43 @@ function dw_custom_init()
     'rewrite' => true,
     'supports' => array('title','editor','thumbnail','excerpt','comments','revisions')
   ); 
-  register_post_type('titles',$args);
+  register_post_type('sculptors',$args);
+
+   /* BEGIN Exhibits Post Type*/ 
+  $labels = array(
+    'name' => _x('Exhibits', 'post type general name'),
+    'singular_name' => _x('Exhibit', 'post type singular name'),
+    'add_new' => _x('Add New', 'exhibits'),
+    'add_new_item' => __('Add New Exhibit'),
+    'edit_item' => __('Edit Exhibit'),
+    'edit' => _x('Edit', 'exhibits'),
+    'new_item' => __('New Exhibit'),
+    'view_item' => __('View Exhibit'),
+    'search_items' => __('Search Exhibits'),
+    'not_found' =>  __('No Exhibits found'),
+    'not_found_in_trash' => __('No Exhibits found in Trash'), 
+    'view' =>  __('View Exhibits'),
+    'parent_item_colon' => ''
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true, 
+    'query_var' => true, 
+    'capability_type' => 'post',
+   /* 'taxonomies' => array( 'post_tag', 'category'), */
+    'hierarchical' => false,
+    'can_export' => true,
+    'menu_position' => 5,
+    'show_in_nav_menus' => true,
+	'has_archive' => true,
+    'rewrite' => true,
+    'supports' => array('title','editor','thumbnail','excerpt','comments','revisions')
+  ); 
+  register_post_type('exhibits',$args);
 }
+
 
 /*--- Custom Messages - title_updated_messages ---*/
  add_filter('post_updated_messages', 'title_updated_messages');
@@ -146,6 +220,40 @@ function dw_custom_init()
      date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
    10 => sprintf( __('Title draft updated. <a target="_blank" href="%s">Preview Title</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
    );
+
+$messages['sculptors'] = array(
+0 => '', // Unused. Messages start at index 1.
+1 => sprintf( __('Sculptor updated. <a href="%s">View Sculptor</a>'), esc_url( get_permalink($post_ID) ) ),
+2 => __('Custom field updated.'),
+3 => __('Custom field deleted.'),
+4 => __('Sculptor updated.'),
+/* translators: %s: date and time of the revision */
+5 => isset($_GET['revision']) ? sprintf( __('Sculptor restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+6 => sprintf( __('Sculptor published. <a href="%s">View Sculptor</a>'), esc_url( get_permalink($post_ID) ) ),
+7 => __('Sculptor saved.'),
+8 => sprintf( __('Sculptor submitted. <a target="_blank" href="%s">Preview Sculptor</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+9 => sprintf( __('Sculptor scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Sculptor</a>'),
+  // translators: Publish box date format, see http://php.net/date
+  date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+10 => sprintf( __('Sculptor draft updated. <a target="_blank" href="%s">Preview Sculptor</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+);
+
+$messages['exhibits'] = array(
+0 => '', // Unused. Messages start at index 1.
+1 => sprintf( __('Exhibit updated. <a href="%s">View Sculptor</a>'), esc_url( get_permalink($post_ID) ) ),
+2 => __('Custom field updated.'),
+3 => __('Custom field deleted.'),
+4 => __('Exhibit updated.'),
+/* translators: %s: date and time of the revision */
+5 => isset($_GET['revision']) ? sprintf( __('Exhibit restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+6 => sprintf( __('Exhibit published. <a href="%s">View Exhibit</a>'), esc_url( get_permalink($post_ID) ) ),
+7 => __('Exhibit saved.'),
+8 => sprintf( __('Exhibit submitted. <a target="_blank" href="%s">Preview Exhibit</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+9 => sprintf( __('Exhibit scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Exhibit</a>'),
+  // translators: Publish box date format, see http://php.net/date
+  date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+10 => sprintf( __('Exhibit draft updated. <a target="_blank" href="%s">Preview Exhibit</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+);
 
    return $messages;
  }
@@ -374,6 +482,53 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 			),
 	);
 
+
+		$dw_meta_boxes[] = array(
+			'id'         => 'exhibits_metabox',
+			'title'      => 'Exhibition Information',
+			'pages'      => array( 'exhibits'), // Post type
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' => 'Duration',
+					'desc' => 'Enter the duration of the exhibit, e.g May 15 through June 15, 2012',
+					'id'   => $prefix . 'duration',
+					'type' => 'text',
+				),
+				array(
+					'name' => 'Opening',
+					'desc' => 'Please enter the date and time of the opening.',
+					'id'   => $prefix . 'opening',
+					'type' => 'text',
+				),
+				array(
+					'name' => 'Subtitle',
+					'desc' => 'Enter the subtitle of the exhibit, e.g Notebooks by Artists from New York and San Diego',
+					'id'   => $prefix . 'subtitle',
+					'type' => 'text',
+				),
+				array(
+					'name' => 'Begin Date',
+					'desc' => 'Enter the date when the show begins. This will not be display but used to determine when and where to display the exhibition',
+					'id'   => $prefix . 'begin_date',
+					'type' => 'text_date',
+				),
+				array(
+					'name' => 'End Date',
+					'desc' => 'Enter the date when the show end. This will not be display but used to determine when and where to display the exhibition.',
+					'id'   => $prefix . 'end_date',
+					'type' => 'text_date',
+				),
+				array(
+					'name' => 'Related Text',
+					'desc' => 'Enter the date when the show end. This will not be display but used to determine when and where to display the exhibition.',
+					'id'   => $prefix . 'related_text',
+					'type' => 'wysiwyg',
+				),
+			),
+	);
 
 	// Add other metaboxes as needed
 
