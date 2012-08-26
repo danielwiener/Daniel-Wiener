@@ -504,6 +504,18 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 					'type' => 'text',
 				),
 				array(
+					'name' => 'One Person Show',
+					'desc' => 'Check if this is group show',
+					'id'   => $prefix . 'one_person_show',
+					'type' => 'checkbox',
+				),
+				array(
+					'name' => 'Group Show',
+					'desc' => 'Check if this is group show',
+					'id'   => $prefix . 'group_show',
+					'type' => 'checkbox',
+				),
+				array(
 					'name' => 'Subtitle',
 					'desc' => 'Enter the subtitle of the exhibit, e.g Notebooks by Artists from New York and San Diego',
 					'id'   => $prefix . 'subtitle',
