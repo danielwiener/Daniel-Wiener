@@ -14,8 +14,24 @@
 			<?php dw_posts_by_category('news');
 			dw_posts_by_category('exhibitions');
 			dw_posts_by_category('open_source_sculpture');
-			dw_posts_by_category('sculptors');
+			
 			 ?>
+			
+			<aside id="sculptors" class="widget"><h1 class="widget-title"><a href="<?php echo site_url('/sculptors') ?>">Sculptors</a></h1><ul>
+				<?php
+					/* Sculptors Sidebar*/ 
+					$args = array(
+						'post_type' 		=> 'sculptors',
+						'post_status' 		=> 'publish',
+						'posts_per_page'	=> -1,
+						'orderby'			=> 'title',
+						"order"				=> 'ASC', 
+					);
+					$archive_query = New WP_Query($args);
+				    while ( $archive_query->have_posts() ) : $archive_query->the_post(); ?>
+				           <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					<?php endwhile; ?>
+				</ul></aside>
 			
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
