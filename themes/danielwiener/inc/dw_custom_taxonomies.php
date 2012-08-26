@@ -117,6 +117,11 @@ function dw_taxonomy_add_new_meta_field() {
 		<input type="text" name="term_meta[dw_venue_phone]" id="term_meta[dw_venue_phone]" value="">
 		<p class="description"><?php _e( 'Enter the phone number','_s' ); ?></p>
 	</div>
+	<div class="form-field">
+		<label for="term_meta[dw_venue_url]"><?php _e( 'Venue Url', '_s' ); ?></label>
+		<input type="text" name="term_meta[dw_venue_url]" id="term_meta[dw_venue_url]" value="">
+		<p class="description"><?php _e( 'Enter the web address for the Venue, include http://','_s' ); ?></p>
+	</div>
 <?php
 }
 add_action( 'venues_add_form_fields', 'dw_taxonomy_add_new_meta_field', 10, 2 );
@@ -142,6 +147,14 @@ function dw_taxonomy_edit_meta_field($term) {
 		<td>
 			<input type="text" name="term_meta[dw_venue_phone]" id="term_meta[dw_venue_phone]" value="<?php echo esc_attr( $term_meta['dw_venue_phone'] ) ? esc_attr( $term_meta['dw_venue_phone'] ) : ''; ?>">
 			<p class="description"><?php _e( 'Enter the phone number','_s' ); ?></p>
+		</td>
+	</tr>
+	
+	<tr class="form-field">
+	<th scope="row" valign="top"><label for="term_meta[dw_venue_url]"><?php _e( 'Venue Url', '_s' ); ?></label></th>
+		<td>
+			<input type="text" name="term_meta[dw_venue_url]" id="term_meta[dw_venue_url]" value="<?php echo esc_attr( $term_meta['dw_venue_url'] ) ? esc_attr( $term_meta['dw_venue_url'] ) : ''; ?>">
+			<p class="description"><?php _e( 'Enter the web address for the Venue, include http://','_s' ); ?></p>
 		</td>
 	</tr>
 <?php
