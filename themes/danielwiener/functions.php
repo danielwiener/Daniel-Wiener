@@ -240,7 +240,7 @@ $messages['sculptors'] = array(
 
 $messages['exhibits'] = array(
 0 => '', // Unused. Messages start at index 1.
-1 => sprintf( __('Exhibit updated. <a href="%s">View Sculptor</a>'), esc_url( get_permalink($post_ID) ) ),
+1 => sprintf( __('Exhibit updated. <a href="%s">View Exhibit</a>'), esc_url( get_permalink($post_ID) ) ),
 2 => __('Custom field updated.'),
 3 => __('Custom field deleted.'),
 4 => __('Exhibit updated.'),
