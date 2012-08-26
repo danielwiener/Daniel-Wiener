@@ -43,15 +43,23 @@ t 212 410 6120</p>
 
 <div class="column1">
 <h1>Exhibitions</h1>
-<h2><a href="http://www.romanovgrave.com/exhibitions/spiral-bound">Spriral Bound</a></h2>
-<p>Notebooks by Artists from New York and San Diego<br />
-<a href="http://www.romanovgrave.com/exhibitions/spiral-bound-when-found-make-a-note-of">Read Essay</a><br />
-June 18 - July 16, 2011<br />
-National University<br />
-7787 Alvarado Road<br />
-La Mesa, CA
-</p>
+<h2><a href="http://www.illearts.com/exhibition_SeatingArrange.php">Seating Arrangements</a></h2>
+<p><strong>curated by Mary Heilmann</strong> featuring works by Don Christensen, Mary Heilmann, Kurt Gumaer and Daniel Wiener</p>
 
+<p>August 11 - September 11, 2012</p>
+
+<p><a href="http://www.illearts.com/">ILLE Arts</a>
+216a Main Street<br>
+Amagansett, NY<br>
+11930</p>
+
+<h2><a title="LongHouse Reserve" href="http://longhouse.org/exhibitions.ihtml?id=42" target="_blank">Diversities of Sculpture/Derivations from Nature</a></h2>
+<p>curated by Bonnie Rychlak<br />
+April 28th &#8211; October 7th, 2012</p>
+<p><a title="LongHouse Reserve" href="http://longhouse.org/" target="_blank">LongHouse Reserve 2012</a><br>
+133 Hands Creek Road<br />
+East Hampton, New York 11937<br />
+Please check the website for hours and directions.</p>
 <h1>Materials</h1>
 <h2><a href="http://www.avesstudio.com/index.php?page=shop.product_details&product_id=28&flypage=flypage.tpl&pop=0&option=com_virtuemart&Itemid=4&vmcchk=1&Itemid=4" target="_blank">Apoxie Sculpt</a></h2>
 <p>Apoxie-Sculpt is a self-hardening clay manufactured by Aves Studios.</p>
