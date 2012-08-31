@@ -96,6 +96,35 @@ if ( ! function_exists( 'build_taxonomies' ) ):
 							'hierarchical' => 'true',
 							) ) );
 
+						
+	 $labels = array(
+	   'name' => _x( 'Years', 'taxonomy general name' ),
+	   'singular_name' => _x( 'Year', 'taxonomy singular name' ),
+	   'search_items' =>  __( 'Search Years' ),
+	   'popular_items' => __( 'Popular Years' ),
+	   'all_items' => __( 'All Years' ),
+	   'parent_item' => null,
+	   'parent_item_colon' => null,
+	   'edit_item' => __( 'Edit Year' ), 
+	   'update_item' => __( 'Update Year' ),
+	   'add_new_item' => __( 'Add Year' ),
+	   'new_item_name' => __( 'New Year Name' ),
+	 ); 
+
+	register_taxonomy(
+	'dw_years',
+	'exhibits',
+		array( 'hierarchical' => true,
+		'labels' => $labels,
+		'query_var' => true,
+		'show_ui' => true,
+		'public' => true,
+		'show_in_nav_menus' => true,
+		'rewrite' => array( 'slug' => 'years',
+							'with_front' => false,
+							'hierarchical' => 'true',
+							) ) );
+
 							}
 							endif;
 
