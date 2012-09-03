@@ -91,7 +91,7 @@ if ( ! function_exists( 'build_taxonomies' ) ):
 		'show_ui' => true,
 		'public' => true,
 		'show_in_nav_menus' => true,
-		'rewrite' => array( 'slug' => 'states',
+		'rewrite' => array( 'slug' => 'state',
 							'with_front' => false,
 							'hierarchical' => 'true',
 							) ) );
@@ -123,7 +123,7 @@ if ( ! function_exists( 'build_taxonomies' ) ):
 		'rewrite' => array( 'slug' => 'years',
 							'with_front' => false,
 							'hierarchical' => 'true',
-							) ) );
+						) ) );
 
 							}
 							endif;
@@ -150,6 +150,11 @@ function dw_taxonomy_add_new_meta_field() {
 		<label for="term_meta[dw_venue_url]"><?php _e( 'Venue Url', '_s' ); ?></label>
 		<input type="text" name="term_meta[dw_venue_url]" id="term_meta[dw_venue_url]" value="">
 		<p class="description"><?php _e( 'Enter the web address for the Venue, include http://','_s' ); ?></p>
+	</div>
+	<div class="form-field">
+		<label for="term_meta[dw_venue_zip]"><?php _e( 'Zip Code', '_s' ); ?></label>
+		<input type="text" name="term_meta[dw_venue_zip]" id="term_meta[dw_venue_zip]" value="">
+		<p class="description"><?php _e( 'Enter the Zip Code for the Venue','_s' ); ?></p>
 	</div>
 <?php
 }
@@ -184,6 +189,13 @@ function dw_taxonomy_edit_meta_field($term) {
 		<td>
 			<input type="text" name="term_meta[dw_venue_url]" id="term_meta[dw_venue_url]" value="<?php echo esc_attr( $term_meta['dw_venue_url'] ) ? esc_attr( $term_meta['dw_venue_url'] ) : ''; ?>">
 			<p class="description"><?php _e( 'Enter the web address for the Venue, include http://','_s' ); ?></p>
+		</td>
+	</tr>
+	<tr class="form-field">
+	<th scope="row" valign="top"><label for="term_meta[dw_venue_zip]"><?php _e( 'Venue Zip Code', '_s' ); ?></label></th>
+		<td>
+			<input type="text" name="term_meta[dw_venue_zip]" id="term_meta[dw_venue_zip]" value="<?php echo esc_attr( $term_meta['dw_venue_zip'] ) ? esc_attr( $term_meta['dw_venue_zip'] ) : ''; ?>">
+			<p class="description"><?php _e( 'Enter the Zip Code for the Venue','_s' ); ?></p>
 		</td>
 	</tr>
 <?php
