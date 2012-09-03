@@ -23,39 +23,90 @@ get_header(); ?>
 
 				<?php _s_content_nav( 'nav-above' ); ?>
 
-				<?php /* Start the Loop */ ?>
+				<?php 
+				global $wp_query;
+					$args = array_merge( $wp_query->query,
+						array(
+							'orderby'         => 'meta_value',
+							'meta_key'		  => '_dw_begin_date',
+							'order'           => 'DESC', 
+						)	
+					); 
+			 	query_posts( $args );
+				/* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<header class="entry-header">
+							
 							<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', '_s' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 						</header><!-- .entry-header -->
 
 
 						<div class="entry-summary">
 							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+								<?php if(has_post_thumbnail()): ?>
 							<?php the_post_thumbnail('thumbnail', array('class' => 'alignleft', 'title' => get_the_title() )); ?>
-							</a>
-							<?php $exhibits_duration =  get_post_meta($post->ID, "_dw_duration", $single = true) ? '_' . get_post_meta($post->ID, "_dw_duration", $single = true) : ''; ?>
-							<?php $exhibits_opening =  get_post_meta($post->ID, "_dw_opening", $single = true) ? '_' . get_post_meta($post->ID, "_dw_opening", $single = true) : ''; ?>
-							<?php $exhibits_opening =  get_post_meta($post->ID, "_dw_opening", $single = true) ? '_' . get_post_meta($post->ID, "_dw_opening", $single = true) : ''; ?>
+							<?php endif; ?>
+								</a>
+							<?php $exhibits_duration =  get_post_meta($post->ID, "_dw_duration", $single = true);?>
+							<?php $exhibits_opening =  get_post_meta($post->ID, "_dw_opening", $single = true) ? '<li>Opening: ' . get_post_meta($post->ID, "_dw_opening", $single = true) . '</li>' : ''; ?>
+							<?php $exhibits_curator =  get_post_meta($post->ID, "_dw_curated_by", $single = true) ? '<li>&nbsp;</li><li>' . get_post_meta($post->ID, "_dw_curated_by", $single = true) . '</li>' : ''; ?>
+							<?php $type_of_exhibit =  get_post_meta($post->ID, "_dw_one_person_show", $single = true) ? '<small>(One Person Show)</small>' : '<small>(Group Show)</small>'; ?>
 							<?php // $exhibit_venue = get_term_by('name', get_query_var( 'term' ), 'venues'); ?>
-							<?php $term_list = wp_get_post_terms($post->ID, 'venues', array("fields" => "all"));
-														 								foreach ($term_list as $zit) {
-														 									echo 'zit: ' . $zit->name . ' end<br>';
-																						$venue_id = $zit->term_id;
-																						echo $venue_id;
-																						 $crap =  get_option("taxonomy_$venue_id"); 
-																						echo $crap['dw_venue_address']. '<br>';
-																						echo $crap['dw_venue_phone']. '<br>';
-																						echo $crap['dw_venue_url']. '<br>';
+							<?php $venue_list = wp_get_post_terms($post->ID, 'venues', array("fields" => "all"));
+														 								foreach ($venue_list as $venue) {
+														 								$venue_name = $venue->name;
+																						$venue_slug = $venue->slug;
+																						$venue_id = $venue->term_id;
+																						$venue_meta =  get_option("taxonomy_$venue_id"); 
+																						$venue_address = $venue_meta['dw_venue_address'];
+																						$venue_phone = $venue_meta['dw_venue_phone'];
+																						$venue_url = $venue_meta['dw_venue_url'];
+																						$venue_zip = $venue_meta['dw_venue_zip'];
 														 								}
-													
-								?>
-							<?php echo $exhibits_duration; ?><br>
-							Opening: <?php echo $exhibits_opening; ?><br>
-							<?php echo $exhibit_venue; ?>
-							<?php the_excerpt(); ?> 
+							$city_list = wp_get_post_terms($post->ID, 'dw_cities', array("fields" => "all"));
+								foreach ($city_list as $dw_city) {
+									$dw_city_name = $dw_city->name;
+									$dw_city_slug = $dw_city->slug;
+									$dw_city_id = $dw_city->term_id;
+									$dw_city_count = $dw_city->count;
+								}
+							$state_list = wp_get_post_terms($post->ID, 'dw_states', array("fields" => "all"));
+								foreach ($state_list as $dw_state) {
+									$dw_state_name = $dw_state->name;
+									$dw_state_slug = $dw_state->slug;
+									$dw_state_id = $dw_state->term_id;
+									$dw_state_count = $dw_state->count;
+								}
+							$years_list = wp_get_post_terms($post->ID, 'dw_years', array("fields" => "all"));
+								foreach ($years_list as $dw_year) {
+									$dw_year_name = $dw_year->name;
+									$dw_year_slug = $dw_year->slug;
+									$dw_year_id = $dw_year->term_id;
+									$dw_year_count = $dw_year->count;
+								}
+							?>
+							<?php echo $type_of_exhibit; ?>
+							<ul>
+							<li><?php echo $exhibits_duration; ?>, <a href="/is/years/<?php echo $dw_year_slug; ?>"><?php echo $dw_year_name ?></a></li>
+							<?php echo $exhibits_opening; ?>
+							<?php echo $exhibits_curator; ?>
+							<li>&nbsp;</li>
+								<li><?php if ($venue_url): ?>
+								<a href="<?php echo $venue_url ?>">	
+								<?php endif ?>
+							<?php echo $venue_name; ?>
+								<?php if ($venue_url): ?>
+									</a>
+								<?php endif ?></li>
+							<li><?php echo $venue_address; ?></li>
+							<?php $dw_state_display = ($dw_state_count > 1) ? '<a href="/is/state/' . $dw_state_slug . '">' . $dw_state_name . '</a>'  : $dw_state_name ; ?>
+							<?php $dw_city_display = ($dw_city_count > 1) ? '<a href="/is/city/' . $dw_city_slug . '">' . $dw_city_name . '</a>'  : $dw_city_name ; ?>
+							<li><?php echo $dw_city_display; ?>, <?php echo $dw_state_display; ?> <?php echo $venue_zip; ?></li>
+							<li><?php echo $venue_phone; ?></li>
+
+						
 						</div><!-- .entry-summary -->
 
 
