@@ -491,9 +491,10 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 			'priority'   => 'high',
 			'show_names' => true, // Show field names on the left
 			'fields' => array(
+
 				array(
 					'name' => 'Duration',
-					'desc' => 'Enter the duration of the exhibit, e.g May 15 through June 15, 2012',
+					'desc' => 'Enter the duration of the exhibit, e.g May 15 through June 15. Leave off the year. Click the Years taxonomy to include a year.',
 					'id'   => $prefix . 'duration',
 					'type' => 'text',
 				),
@@ -522,16 +523,22 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 					'type' => 'text',
 				),
 				array(
+					'name' => 'Curated By',
+					'desc' => 'Enter the curator. Include "Curated by" or equivalent.',
+					'id'   => $prefix . 'curated_by',
+					'type' => 'text',
+				),
+				array(
 					'name' => 'Begin Date',
 					'desc' => 'Enter the date when the show begins. This will not be display but used to determine when and where to display the exhibition',
 					'id'   => $prefix . 'begin_date',
-					'type' => 'text_date',
+					'type' => 'text_date_timestamp',
 				),
 				array(
 					'name' => 'End Date',
 					'desc' => 'Enter the date when the show end. This will not be display but used to determine when and where to display the exhibition.',
 					'id'   => $prefix . 'end_date',
-					'type' => 'text_date',
+					'type' => 'text_date_timestamp',
 				),
 				array(
 					'name' => 'Related Text',
