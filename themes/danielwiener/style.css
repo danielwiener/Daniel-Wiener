@@ -208,7 +208,7 @@ sub {
 	top: .5ex;
 }
 small {
-	font-size: 75%;
+	font-size: 11px;
 }
 big {
 	font-size: 125%;
@@ -574,6 +574,11 @@ footer.entry-meta {
 	display: block;
 	/*background: #fff;*/
 }
+.entry-summary ul {
+	list-style: none;
+	}
+
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
