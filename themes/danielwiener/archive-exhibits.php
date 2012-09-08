@@ -105,8 +105,13 @@ get_header(); ?>
 							<?php $dw_city_display = ($dw_city_count > 1) ? '<a href="/is/city/' . $dw_city_slug . '">' . $dw_city_name . '</a>'  : $dw_city_name ; ?>
 							<li><?php echo $dw_city_display; ?>, <?php echo $dw_state_display; ?> <?php echo $venue_zip; ?></li>
 							<li><?php echo $venue_phone; ?></li>
-
-						
+</ul>
+							<?php if (get_post_meta($post->ID, "_dw_related_text", $single = true)): ?>
+							<?php
+							$exhibits_related_text =  get_post_meta($post->ID, "_dw_related_text", $single = true);
+							$exhibits_related_text = wpautop($exhibits_related_text, true);
+							echo $exhibits_related_text; ?>	
+							<?php endif ?>
 						</div><!-- .entry-summary -->
 
 
