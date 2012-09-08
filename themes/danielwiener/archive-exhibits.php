@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Archive pages.
+ * The template for displaying Archive page for Exhibits.
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
@@ -52,8 +52,6 @@ get_header(); ?>
 							<?php $exhibits_duration =  get_post_meta($post->ID, "_dw_duration", $single = true);?>
 							<?php $exhibits_opening =  get_post_meta($post->ID, "_dw_opening", $single = true) ? '<li>Opening: ' . get_post_meta($post->ID, "_dw_opening", $single = true) . '</li>' : ''; ?>
 							<?php $exhibits_curator =  get_post_meta($post->ID, "_dw_curated_by", $single = true) ? '<li>&nbsp;</li><li>' . get_post_meta($post->ID, "_dw_curated_by", $single = true) . '</li>' : ''; ?>
-							<?php $type_of_exhibit =  get_post_meta($post->ID, "_dw_one_person_show", $single = true) ? '<small>(One Person Show)</small>' : '<small>(Group Show)</small>'; ?>
-							<?php // $exhibit_venue = get_term_by('name', get_query_var( 'term' ), 'venues'); ?>
 							<?php $venue_list = wp_get_post_terms($post->ID, 'venues', array("fields" => "all"));
 														 								foreach ($venue_list as $venue) {
 														 								$venue_name = $venue->name;
@@ -86,8 +84,16 @@ get_header(); ?>
 									$dw_year_id = $dw_year->term_id;
 									$dw_year_count = $dw_year->count;
 								}
+							$exhibit_types = wp_get_post_terms($post->ID, 'dw_exhibit_types', array("fields" => "all"));
+								foreach ($exhibit_types as $exhibit_type) {
+									$exhibit_type_name = $exhibit_type->name;
+									$exhibit_type_slug = $exhibit_type->slug;
+									$exhibit_type_id = $exhibit_type->term_id;
+									$exhibit_type_count = $exhibit_type->count;
+
+								}
 							?>
-							<?php echo $type_of_exhibit; ?>
+							<small><a href="/is/exhibit_type/<?php echo $exhibit_type_slug ?>">[<?php echo $exhibit_type->name; ?>]</a></small>
 							<ul>
 							<li><?php echo $exhibits_duration; ?>, <a href="/is/years/<?php echo $dw_year_slug; ?>"><?php echo $dw_year_name ?></a></li>
 							<?php echo $exhibits_opening; ?>

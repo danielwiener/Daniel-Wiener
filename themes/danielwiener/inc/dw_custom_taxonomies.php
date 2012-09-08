@@ -124,6 +124,34 @@ if ( ! function_exists( 'build_taxonomies' ) ):
 							'with_front' => false,
 							'hierarchical' => 'true',
 						) ) );
+							
+	 $labels = array(
+	   'name' => _x( 'Exhibit Types', 'taxonomy general name' ),
+	   'singular_name' => _x( 'Exhibit Type', 'taxonomy singular name' ),
+	   'search_items' =>  __( 'Search Exhibit Types' ),
+	   'popular_items' => __( 'Popular Exhibit Types' ),
+	   'all_items' => __( 'All Exhibit Types' ),
+	   'parent_item' => null,
+	   'parent_item_colon' => null,
+	   'edit_item' => __( 'Edit Exhibit Type' ), 
+	   'update_item' => __( 'Update Exhibit Type' ),
+	   'add_new_item' => __( 'Add Exhibit Type' ),
+	   'new_item_name' => __( 'New Exhibit Type Name' ),
+	 ); 
+
+	register_taxonomy(
+	'dw_exhibit_types',
+	'exhibits',
+		array( 'hierarchical' => true,
+		'labels' => $labels,
+		'query_var' => true,
+		'show_ui' => true,
+		'public' => true,
+		'show_in_nav_menus' => true,
+		'rewrite' => array( 'slug' => 'exhibit_type',
+							'with_front' => false,
+							'hierarchical' => 'true',
+						) ) );
 
 							}
 							endif;
