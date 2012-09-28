@@ -577,7 +577,11 @@ footer.entry-meta {
 .entry-summary ul {
 	list-style: none;
 	}
+ul.flush_left {
+	margin: 0;
+	padding: 0;
 
+		}
 
 .page-links {
 	clear: both;
