@@ -87,9 +87,9 @@ get_header(); ?>
 									$exhibit_type_count = $exhibit_type->count;
 
 								}
-							?>
-							<small><a href="/is/exhibit_type/<?php echo $exhibit_type_slug ?>">[<?php echo $exhibit_type->name; ?>]</a></small>
-							<ul>
+							?><ul class="flush_left">
+							<li><small><a href="/is/exhibit_type/<?php echo $exhibit_type_slug ?>">[<?php echo $exhibit_type->name; ?>]</a></small></li>
+							
 							<li><?php echo $exhibits_duration; ?>, <a href="/is/years/<?php echo $dw_year_slug; ?>"><?php echo $dw_year_name ?></a></li>
 							<?php echo $exhibits_opening; ?>
 							<?php echo $exhibits_curator; ?>
