@@ -554,6 +554,7 @@ function cmb_initialize_cmb_meta_boxes() {
 
 }
 
+
 /**
  * Remove inline styles printed when the gallery shortcode is used.
  *
