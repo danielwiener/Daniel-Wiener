@@ -117,7 +117,9 @@ get_header(); ?>
 							$exhibits_related_text =  get_post_meta($post->ID, "_dw_related_text", $single = true);
 							$exhibits_related_text = wpautop($exhibits_related_text, true);
 							echo $exhibits_related_text; ?>	
+						
 							<?php endif ?>
+								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">View Details, Images, Press, etc. &#x2192;</a>
 						</div><!-- .entry-summary -->
 
 
