@@ -22,7 +22,7 @@ get_header(); ?>
 				<?php rewind_posts(); ?>
 
 				<?php _s_content_nav( 'nav-above' ); ?>
-				<?php include('inc/exhibits_functions.php'); ?>
+				
 				<?php 
 				global $wp_query;
 					$args = array_merge( $wp_query->query,
@@ -44,6 +44,7 @@ get_header(); ?>
 
 
 						<div class="entry-summary">
+							<?php include('inc/exhibits_functions.php'); ?>
 							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 								<?php if(has_post_thumbnail()): ?>
 							<?php the_post_thumbnail('thumbnail', array('class' => 'alignleft', 'title' => get_the_title() )); ?>
