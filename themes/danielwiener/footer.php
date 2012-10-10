@@ -22,6 +22,9 @@
 </footer><!-- .site-footer .site-footer -->
 
 <?php wp_footer(); ?>
+<?php if (is_front_page()): ?>
+	<script type="text/javascript" src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+<?php endif ?>
 
 </body>
 </html>

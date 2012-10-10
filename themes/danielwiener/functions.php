@@ -323,7 +323,7 @@ function _s_scripts() {
 	       array('jquery'),
 	       '1.0' );
 	   // enqueue the script
-	   wp_enqueue_script('jquery_tools');
+	   // wp_enqueue_script('jquery_tools');
 
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', 'jquery', '20120206', true );
 

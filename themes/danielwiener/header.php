@@ -41,7 +41,7 @@
 <![endif]-->
 <script type="text/javascript" src="http://use.typekit.com/ogu3erd.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-   
+
 <?php wp_head(); ?>  
 
 
