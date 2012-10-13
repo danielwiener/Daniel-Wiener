@@ -11,9 +11,25 @@
 			<aside id="search" class="widget widget_search">
 				<?php get_search_form(); ?>
 			</aside> 
-			<?php dw_posts_by_category('news');
-			dw_posts_by_category('exhibitions');
-			dw_posts_by_category('open_source_sculpture');
+			<?php dw_posts_by_category('news'); 
+			// dw_posts_by_category('exhibitions');?>
+			<aside id="exhibits_sidebar" class="widget"><h1 class="widget-title"><a href="<?php echo site_url('/exhibits') ?>">Exhibits</a></h1><ul>
+				<?php
+					/* Sculptors Sidebar*/ 
+					$args = array(
+						'post_type' 		=> 'exhibits',
+						'post_status' 		=> 'publish',
+						'posts_per_page'	=> -1,
+						'orderby'         => 'meta_value',
+						'meta_key'		  => '_dw_begin_date',
+						'order'           => 'DESC',
+					);
+					$archive_query = New WP_Query($args);
+				    while ( $archive_query->have_posts() ) : $archive_query->the_post(); ?>
+				           <li><a href="<?php the_permalink(); ?>"><?php short_title('&hellip;', 30); ?></a></li>
+					<?php endwhile; ?>
+				</ul></aside>
+		<?php	dw_posts_by_category('open_source_sculpture');
 			
 			 ?>
 			
@@ -23,13 +39,11 @@
 					$args = array(
 						'post_type' 		=> 'sculptors',
 						'post_status' 		=> 'publish',
-						'posts_per_page'	=> -1,
-						'orderby'			=> 'title',
-						"order"				=> 'ASC', 
+						'posts_per_page'	=> -1, 
 					);
 					$archive_query = New WP_Query($args);
 				    while ( $archive_query->have_posts() ) : $archive_query->the_post(); ?>
-				           <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+				           <li><a href="<?php the_permalink(); ?>" title="Read <?php the_title(); ?>"><?php the_title(); ?></a></li>
 					<?php endwhile; ?>
 				</ul></aside>
 			

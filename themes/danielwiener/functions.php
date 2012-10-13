@@ -570,6 +570,18 @@ function cmb_initialize_cmb_meta_boxes() {
 		require_once 'lib/metabox/init.php';
 
 }
+// ====================================================================================================================================
+// = Short Title function - http://wordpress.org/support/topic/how-to-control-the-post-title-lengh - short_title('&hellip', 30) (etc) =
+// ====================================================================================================================================
+function short_title($after = '', $length) {
+	$mytitle = get_the_title();
+	if ( strlen($mytitle) > $length ) {
+	$mytitle = substr($mytitle,0,$length);
+	echo $mytitle . $after;
+	} else {
+	echo $mytitle;
+	}
+}
 
 
 /**
