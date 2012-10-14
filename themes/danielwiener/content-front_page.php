@@ -6,14 +6,24 @@
  * @since Daniel Wiener 1.5
  */
 ?>
-
 	<div class="images">
 		<?php
-		global $query_string;
-		$args = array('post__in'=>get_option('sticky_posts'));
-		query_posts($args);
+		$args = array(
+			'post_type' 		=> array('titles', 'exhibits', 'post', 'page', 'sculptors'),
+			'post_status' 		=> 'publish',			
+			'meta_query' => array(
+											array(
+												'key' => '_dw_is_front_page_slides',
+												'value' => 'on',
+											)
+										),
+						// 'orderby'         => 'meta_value',
+						// 								'meta_key'		  => '_dw_slide_order',
+						// 								'order'           => 'ASC',
+		);
+		$front_query = New WP_Query($args);
 		$slidetabs = ''; ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( 	$front_query->have_posts() ) : 	$front_query->the_post(); ?>
 			<?php $current_category = get_the_category($post->ID); ?>
 
 		<div>
