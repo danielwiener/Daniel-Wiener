@@ -553,6 +553,29 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 				),
 			),
 	);
+	
+		$dw_meta_boxes[] = array(
+			'id'         => 'featured_layout_metabox',
+			'title'      => 'Slideshow and Layout',
+			'pages'      => array( 'titles', 'exhibits', 'post', 'page', 'sculptors'), // Post type
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' => 'Front Page Slide Show',
+					'desc' => 'Check if you want this entry on the front page slide show. Must include an image 940 x 445 as featured image',
+					'id'   => $prefix . 'is_front_page_slides',
+					'type' => 'checkbox',
+				),
+				array(
+					'name' => 'Slide Order',
+					'desc' => 'Enter number for slide order ',
+					'id'   => $prefix . 'slide_order',
+					'type' => 'text_small',
+				),
+			),
+	);
 
 	// Add other metaboxes as needed
 
