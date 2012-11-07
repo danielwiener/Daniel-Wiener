@@ -1,5 +1,11 @@
 <?php
-// Custom Taxonomy Code  
+/**
+ * Custom Taxonomy Code
+ *
+ *
+ * @package Daniel Wiener
+ * @since Daniel Wiener 1.0
+ */ 
 add_action( 'init', 'build_taxonomies', 0 );  
 if ( ! function_exists( 'build_taxonomies' ) ):
 
