@@ -9,7 +9,7 @@
 	<div class="images">
 		<?php
 		$args = array(
-			'post_type' 		=> array('titles', 'exhibits', 'post', 'page', 'sculptors'),
+			'post_type' 		=> array('titles', 'exhibits', 'post', 'page', 'sculptors', 'artworks'),
 			'post_status' 		=> 'publish',			
 			// 'meta_query' => array(
 			// 											array(
