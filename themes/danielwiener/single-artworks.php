@@ -13,8 +13,6 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php // _s_content_nav( 'nav-above' ); ?>
-
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -32,11 +30,8 @@ get_header(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', '_s' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
 
-					<footer class="entry-meta">
-						<!-- Maybe Something Later -->
-					</footer><!-- .entry-meta -->
 				</article><!-- #post-<?php the_ID(); ?> -->
-
+					<hr />
 				<?php _s_content_nav( 'nav-below' ); ?>
 
 				<?php

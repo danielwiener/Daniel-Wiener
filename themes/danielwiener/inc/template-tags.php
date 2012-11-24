@@ -41,7 +41,7 @@ function _s_content_nav( $nav_id ) {
 		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', '_s' ) . '</span> '    . $prev_short_title, TRUE ); // the TRUE is to say it is in the same category?>
 		<?php next_post_link( '<div class="nav-next">%link</div>', ' ' . $next_short_title . ' <span class="meta-nav">' . _x( '&rarr;', 'Next post link', '_s' ) . '</span>', TRUE ); ?>
 		
-		<?php elseif (is_singular('exhibits') ): ?>
+		<?php elseif (is_singular('exhibits')  || is_singular('artworks')  ): ?>
 			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', '_s' ) . '</span> %title' ); ?>
 			<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', '_s' ) . '</span>' ); ?>
 
