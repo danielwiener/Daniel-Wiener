@@ -42,7 +42,7 @@ t 212 410 6120</p>
  </div>
 
 <div class="column1">
-<h1>Exhibitions</h1>
+<h1><a href="<?php echo bloginfo('siteurl') . '/exhibits'; ?>">Exhibitions</a></h1>
 <h2><a href="http://www.illearts.com/exhibition_SeatingArrange.php">Seating Arrangements</a></h2>
 <p><strong>curated by Mary Heilmann</strong> featuring works by Don Christensen, Mary Heilmann, Kurt Gumaer and Daniel Wiener</p>
 
