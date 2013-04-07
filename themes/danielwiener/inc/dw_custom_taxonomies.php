@@ -159,7 +159,100 @@ if ( ! function_exists( 'build_taxonomies' ) ):
 							'hierarchical' => 'true',
 						) ) );
 
-							}
+							
+// ====================================================================================
+// = Make, equivalent of genre but I like it better /make/faces, make/sculpture, etc. =
+// ====================================================================================
+		 $labels = array(
+	    'name' => _x( 'Make', 'taxonomy general name' ),
+	    'singular_name' => _x( 'Make', 'taxonomy singular name' ),
+	    'search_items' =>  __( 'Search Makes' ),
+	    'popular_items' => __( 'Popular Makes' ),
+	    'all_items' => __( 'All Makes' ),
+	    'parent_item' => null,
+	    'parent_item_colon' => null,
+	    'edit_item' => __( 'Edit Make' ), 
+	    'update_item' => __( 'Update Make' ),
+	    'add_new_item' => __( 'Add Make' ),
+	    'new_item_name' => __( 'New Name of a Make' ),
+	  ); 
+
+		register_taxonomy(
+		'make',
+		'artworks',
+			array( 'hierarchical' => true,
+			'labels' => $labels,
+			'query_var' => true,
+			'show_ui' => true,
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'rewrite' => array( 'slug' => 'make',
+								'with_front' => false,
+								'hierarchical' => 'true',
+								) ) );
+						
+							
+// ====================================================================================
+// = TYPE ->LIKE, equivalent of kind but I like it better /make/faces, make/sculpture, etc. =
+// ====================================================================================
+		 $labels = array(
+	    'name' => _x( 'Types', 'taxonomy general name' ),
+	    'singular_name' => _x( 'Type', 'taxonomy singular name' ),
+	    'search_items' =>  __( 'Search Types' ),
+	    'popular_items' => __( 'Popular Types' ),
+	    'all_items' => __( 'All Types' ),
+	    'parent_item' => null,
+	    'parent_item_colon' => null,
+	    'edit_item' => __( 'Edit Type' ), 
+	    'update_item' => __( 'Update Type' ),
+	    'add_new_item' => __( 'Add Type' ),
+	    'new_item_name' => __( 'New Type' ),
+	  ); 
+
+		register_taxonomy(
+		'types',
+		'artworks',
+			array( 'hierarchical' => true,
+			'labels' => $labels,
+			'query_var' => true,
+			'show_ui' => true,
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'rewrite' => array( 'slug' => 'like',
+								'with_front' => false,
+								'hierarchical' => 'true',
+								) ) );
+// ====================================================================================
+// = Place, placed/on the wall. =
+// ====================================================================================
+		 $labels = array(
+	    'name' => _x( 'Places', 'taxonomy general name' ),
+	    'singular_name' => _x( 'Place', 'taxonomy singular name' ),
+	    'search_items' =>  __( 'Search Places' ),
+	    'popular_items' => __( 'Popular Places' ),
+	    'all_items' => __( 'All Places' ),
+	    'parent_item' => null,
+	    'parent_item_colon' => null,
+	    'edit_item' => __( 'Edit Place' ), 
+	    'update_item' => __( 'Update Place' ),
+	    'add_new_item' => __( 'Add Place' ),
+	    'new_item_name' => __( 'New Place' ),
+	  ); 
+
+		register_taxonomy(
+		'places',
+		'artworks',
+			array( 'hierarchical' => true,
+			'labels' => $labels,
+			'query_var' => true,
+			'show_ui' => true,
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'rewrite' => array( 'slug' => 'placed',
+								'with_front' => false,
+								'hierarchical' => 'true',
+								) ) );							
+								}
 							endif;
 
 // ==========================
