@@ -155,22 +155,22 @@ function _s_scripts() {
 
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'jquery' );
+	//wp_enqueue_script( 'jquery' );
 	
-	   wp_register_script('jquery_tools',
+	   //wp_register_script('jquery_tools',
 	       // get_bloginfo('stylesheet_directory') . '/js/jquery.tools.min.js', 
-			'http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js',
-	       array('jquery'),
-	       '1.0' );
+			//'http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js',
+	       //array('jquery'),
+	       //'1.0' );
 	   // enqueue the script
 	   // wp_enqueue_script('jquery_tools');
 
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', 'jquery', '20120206', true );
-
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
+	
 	if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
@@ -399,6 +399,53 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 				),
 			),
 	);
+	
+		$dw_meta_boxes[] = array(
+			'id'         => 'featured_in_subfooter',
+			'title'      => 'Subfooter Layout',
+			'pages'      => array( 'titles', 'exhibits'), // Post type
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' => 'Include in Subfooter',
+					'desc' => 'Check if you want this entry in the subfooter',
+					'id'   => $prefix . 'is_in_subfooter',
+					'type' => 'checkbox',
+				),
+				array(
+					'name' => 'Subfooter Order',
+					'desc' => 'Enter number for subfooter order [DANIEL!!! may not need this delete, if so] ',
+					'id'   => $prefix . 'slide_order',
+					'type' => 'text_small',
+				),
+				array(
+					'name' => 'Subfooter End Date',
+					'desc' => 'Enter date when the exhibit is taken off the subfooter [DANIEL!!! may not need this delete, if so]',
+					'id'   => $prefix . 'slide_order',
+					'type' => 'text_date',
+				),
+			),
+	);
+	
+	
+		$dw_meta_boxes[] = array(
+			'id'         => 'notes',
+			'title'      => 'Notes',
+			'pages'      => array( 'titles', 'exhibits', 'posts', 'pages', 'artworks', 'sculptors'), // Post type
+			'context'    => 'normal',
+			'priority'   => 'high',
+			'show_names' => true, // Show field names on the left
+			'fields' => array(
+				array(
+					'name' => 'Notes',
+					'desc' => 'Add notes that will not be published, for your eyes only',
+					'id'   => $prefix . 'notes',
+					'type' => 'wysiwyg',
+				),
+			),
+	);
 
 	// Add other metaboxes as needed
 
@@ -524,3 +571,8 @@ function my_add_counts_to_dashboard() {
     }
 }	
 }
+// =====================================
+// = used with codepress admin columns =
+// =====================================
+add_filter('cpac_use_hidden_custom_fields', '__return_true'); // enables the use hidden custom fields
+add_filter( 'cpac-remove-filtering-columns', '__return_false' ); // add dropdown taxonomy filtering to the overview pages
