@@ -135,7 +135,7 @@ function dw_custom_init()
     'show_ui' => true, 
     'query_var' => true, 
     'capability_type' => 'post',
-   /* 'taxonomies' => array( 'post_tag', 'category'), */
+    'taxonomies' => array( 'make', 'types', 'places'),
     'hierarchical' => false,
     'can_export' => true,
     'menu_position' => 5,
