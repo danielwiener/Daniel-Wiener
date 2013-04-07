@@ -40,3 +40,10 @@ Using the starter theme -  _s, or underscores - I am reworking, updating the the
 
 *** 
   
+##April 7, 2013## 
+
+- I have been working on this and added many things including artworks and their 3 taxonomies and many things for exhibitions, etc.
+
+
+*** 
+  
