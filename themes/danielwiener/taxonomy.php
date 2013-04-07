@@ -19,7 +19,6 @@ get_header(); ?>
 					<h1 class="page-title">Exhibits</h1>
 				</header>
 
-				<?php rewind_posts(); ?>
 
 				<?php _s_content_nav( 'nav-above' ); ?>
 				
