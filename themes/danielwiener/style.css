@@ -387,6 +387,23 @@ a:active {
 	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 } 
 
+#full-width {
+	padding: 10px; 
+	clear: both; 
+	margin-top: 30px;
+    background-color: rgba(220, 220, 222, 0.8); 
+   	   
+  /*  	opacity:0.8;
+  		-moz-opacity: 0.8;
+  		filter:alpha(opacity=0.8);*/ 
+	border: 1px solid black;
+	width:  940px; 
+	/*display: block;*/
+	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	 	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
 #front-page {
 	padding: 10px; 
 	clear: both; 
@@ -411,6 +428,17 @@ a:active {
 		border: 1px solid red;
 		padding: 80px 0 0 0;
 } */
+
+#image_grid {
+	margin-left: -10px;
+	text-align: center;
+	margin-right: -30px;
+}
+
+#image_grid img {
+	margin: 0;
+	padding: 0 5px 5px 0 !important;
+}
 
 /* =Header
 ----------------------------------------------- */ 
