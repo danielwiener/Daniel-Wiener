@@ -11,6 +11,22 @@
 			<aside id="search" class="widget widget_search">
 				<?php get_search_form(); ?>
 			</aside> 
+			
+			<aside id="addthis" class="widget">
+		
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style ">
+				<a class="addthis_button_preferred_1"></a>
+				<a class="addthis_button_preferred_2"></a>
+				<a class="addthis_button_preferred_3"></a>
+				<a class="addthis_button_preferred_4"></a>
+				<a class="addthis_button_compact"></a>
+				<a class="addthis_counter addthis_bubble_style"></a>
+				</div>
+				<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51074a053b83e3d4"></script>
+				<!-- AddThis Button END -->
+			</aside>
 			<?php dw_posts_by_category('news'); 
 			// dw_posts_by_category('exhibitions');?>
 			<aside id="exhibits_sidebar" class="widget"><h1 class="widget-title"><a href="<?php echo site_url('/exhibits') ?>">Exhibits</a></h1><ul>
