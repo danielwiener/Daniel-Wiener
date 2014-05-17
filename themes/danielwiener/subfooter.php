@@ -1,30 +1,8 @@
 <div id="subfooter"><div id="subfooter_page">
 
 <div class="column1">
-
-<h1>Reviews/Articles</h1>
-<h2><a href="http://bombsite.com/issues/119/articles/6437/" target="_blank">Bomb Magazine</a></h2>
-<p>
-I am very pleased that <a href="http://www.davidnolangallery.com/artists/alexander-ross/">Alexander Ross</a> wrote about my work in the Artists on Artists series in the most recent issue of <a href="http://bombsite.com/">Bomb Magazine</a>.</p>
-
-<p>Also included in the Artists on Artists series are the great sculptors, <a href="http://derekeller.com/michellesegre_work.html">Michelle Segre</a> and <a href="http://www.sheilapepe.com/">Sheila Pepe</a>. It is an honor to be in the same issue with them.</p>
-<h2><a href="http://artcritical.com/2011/05/05/daniel-wiener/" target="_blank">An Ethos of Industrious Neurosis</a></h2>
-<p>by David Brody, <a href="http://artcritical.com/" target="_blank">ArtCritical.com</a><br />
-David Brody, in a wonderful article, writes "Wiener's exploratory, morph-or-die universe is the reverse of our inertial one: objects never remain at rest."</p>
-<h2><a href="http://63.119.11.58/daily-pic/2011/3/18/daniel-wieners-sculptures-at-lesley-heller-too-mes" target="_blank">A Mess of Art</a></h2>
-<p>by Blake Gopnik, The Daily Beast</p>
-
-<h2><a href="http://www.huffingtonpost.com/2011/03/26/haiku-reviews-fear-form-a_n_840943.html#s258276" target="_blank">Haiku Review</a></h2> 
-<p>by Peter Frank, The Huffington Post</p>
-
-<h2><a href="http://blog.fxfowle.com/2010/09/words-with-the-artist-daniel-wiener-part-1/" target="_blank">Words with the Artist: Daniel Wiener, Part 1</a> and <a href="http://blog.fxfowle.com/2010/09/words-with-the-artist-daniel-wiener-part-2/">Part 2</a> </h2> <p>by Jessica Pleasants, FXFOWLE</p>
-
-<h2><a href="http://www.romanovgrave.com/reviews/daniel-wiener-at-cavin-morris-gallery" target="_blank">Daniel Wiener at Calvin Morris Gallery</a></h2><p>by Ephraim Birnbaum, Romanov Grave</p>
-
-<h1>Interview</h1>
-<h2><a href="http://www.danielwiener.com/is/news/video-of-making-is-thinking-lesley-heller-2011" target="_blank">Making is Thinking Video Tour</a></h2>
-<p> by James Kalm/Lauren Monk, ArtReview.com<br />
-A walk-through of my recent show at Lesley Heller Workspace, in April.</p>
+	<?php if ( ! dynamic_sidebar( 'footer-column-1' ) ) : ?>
+		<?php endif; ?>
  </div>
 
 <div class="column1">
