@@ -35,7 +35,7 @@
 					$args = array(
 						'post_type' 		=> 'exhibits',
 						'post_status' 		=> 'publish',
-						'posts_per_page'	=> -1,
+						'posts_per_page'	=> 5,
 						'orderby'         => 'meta_value',
 						'meta_key'		  => '_dw_begin_date',
 						'order'           => 'DESC',
@@ -55,7 +55,7 @@
 					$args = array(
 						'post_type' 		=> 'sculptors',
 						'post_status' 		=> 'publish',
-						'posts_per_page'	=> -1, 
+						'posts_per_page'	=> 7, 
 					);
 					$archive_query = New WP_Query($args);
 				    while ( $archive_query->have_posts() ) : $archive_query->the_post(); ?>

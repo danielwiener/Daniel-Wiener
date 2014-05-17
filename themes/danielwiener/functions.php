@@ -244,7 +244,7 @@ function dw_posts_by_category($dw_slug) {
 	
 	$args = array(
 		'category_name' 	=> "$dw_slug", //by category slug
-		'posts_per_page' 	=> -1  	   
+		'posts_per_page' 	=> 5  	   
 	); 
 	$custom_posts = get_posts($args);
 		foreach($custom_posts as $post) : setup_postdata($post);
