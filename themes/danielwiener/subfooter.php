@@ -55,31 +55,7 @@
 </div>
 
 <div class="column1">
-<h1>Website Design and Development</h1>
-<p>Full service web site creation, specializing in portfolios for artists and ecommerce sites for small businesses. Reasonable prices. Personal Service.<br /><a href="/is/contact/">Contact me for a quote.</a><br /></p>
-<h2>Examples:</h2>
-<ul>
-<li><a href="http://thesilo.raphaelrubinstein.com/" target="_blank">The Silo</a></li>
-<li><a href="http://risd-sculpture.com/" target="_blank">RISD Sculpture Department (and sculpture student sites)</a></li>
-<li><a href="http://www.haring.com" target="_blank">Keith Haring</a></li>
-<li><a href="http://www.haringkids.com"  target="_blank">Keith Haring Kids</a></li>
-<li><a href="http://www.haringkids.com/lesson_plans"  target="_blank">Haring Kids Lesson Plans</a></li>
-<li><a href="http://www.billtjones.org" target="_blank">Bill T. Jones Dance Company</a></li>
-<li><a href="http://www.embroideryarts.com" target="_blank">Embroidery Arts</a></li>
-<li><a href="http://www.wholesalemonograms.com" target="_blank">Wholesale Monograms</a></li>
-<li><a href="http://www.peterhedgeswriter.com" target="_blank">Peter Hedges</a></li>
-<li><a href="http://www.lizaphillipsdesign.com" target="_blank">Liza Phillips Design</a></li>
-<li><a href="http://www.davidhumphreynyc.com" target="_blank">David Humphrey (using WPFolio)</a></li>
-<li><a href="http://www.leeboroson.com" target="_blank">Lee Boroson (using WPFolio)</a></li>
-<li><a href="http://www.bengibberd.com" target="_blank">Ben Gibberd</a></li>
-<li><a href="http://www.margeauxwalter.com/art/" target="_blank">Margeaux Walter</a></li>
-<li><a href="http://www.fineartadoption.net" target="_blank">Maintain and update Fine Art Adoption Network</a></li>
-</ul>
-<h2>Designed:</h2>
-<ul>
-<li><a href="http://www.meredithmonk.org" target="_blank">Meredith Monk</a></li>
-<li><a href="http://www.annepatterson.com"  target="_blank">Anne Patterson</a></li>
-</ul>
+
 <h1>Tutorials</h1>
 <ul>
 <li><a href="/is/projects/artist_website">Creating Artist Website, Step by Step</a></li>
