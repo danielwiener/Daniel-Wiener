@@ -26,9 +26,19 @@ get_header(); ?>
 
 				
 				<?php 
+					$make_args = array(
+					    'posts_per_page'  => -1,
+						'meta_key' 		 => '_dw_artwork_year',
+						'orderby'         => 'meta_value_num',  //change this once you add years
+						'order'           => 'DESC',
+					    'post_type'       => 'artworks',
+						'post_status'	=> 'publish',
+						'make'			=> $this_make->slug
+					);
+					$make_query = new WP_Query( $make_args ); 
 				/* Start the Loop */ ?>
 				<div id="image_grid">
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( $make_query->have_posts() ) : $make_query->the_post(); ?>
 
 				
 

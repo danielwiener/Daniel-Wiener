@@ -19,9 +19,9 @@ get_header(); ?>
 					<?php
 					$term_id = $wp_query->queried_object->term_id;
 					
-					$this_place = get_term( $term_id, 'places' );
+					$this_year_created = get_term( $term_id, 'year_created' );
 					?>
-					<h1 class="page-title"><?php echo $this_place->name; ?></h1>
+					<h1 class="page-title"><?php echo $this_year_created->name; ?></h1>
 				</header>
 
 				

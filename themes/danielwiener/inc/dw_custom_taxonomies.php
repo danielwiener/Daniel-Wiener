@@ -252,6 +252,75 @@ if ( ! function_exists( 'build_taxonomies' ) ):
 								'with_front' => false,
 								'hierarchical' => 'true',
 								) ) );							
+						
+
+// ==========================
+// = meta data for Taxonomy =
+// ==========================
+
+// ====================================================================================
+// = YEARS. =
+// ====================================================================================
+		 $labels = array(
+	    'name' => _x( 'Year Created', 'taxonomy general name' ),
+	    'singular_name' => _x( 'Year', 'taxonomy singular name' ),
+	    'search_items' =>  __( 'Search Years' ),
+	    'popular_items' => __( 'Popular Years' ),
+	    'all_items' => __( 'All Years' ),
+	    'parent_item' => null,
+	    'parent_item_colon' => null,
+	    'edit_item' => __( 'Edit Year Created' ), 
+	    'update_item' => __( 'Update Year Created' ),
+	    'add_new_item' => __( 'Add Year Created' ),
+	    'new_item_name' => __( 'New Year Created' ),
+	  ); 
+
+		register_taxonomy(
+		'year_created',
+		'artworks',
+			array( 'hierarchical' => true,
+			'labels' => $labels,
+			'query_var' => true,
+			'show_ui' => true,
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'rewrite' => array( 'slug' => 'year_created',
+								'with_front' => false,
+								'hierarchical' => 'true',
+								) ) );							
+						
+
+
+// ====================================================================================
+// = Materials =
+// ====================================================================================
+		 $labels = array(
+	    'name' => _x( 'Materials', 'taxonomy general name' ),
+	    'singular_name' => _x( 'Material', 'taxonomy singular name' ),
+	    'search_items' =>  __( 'Search Material' ),
+	    'popular_items' => __( 'Popular Material' ),
+	    'all_items' => __( 'All Material' ),
+	    'parent_item' => null,
+	    'parent_item_colon' => null,
+	    'edit_item' => __( 'Edit Material' ), 
+	    'update_item' => __( 'Update Material' ),
+	    'add_new_item' => __( 'Add Material' ),
+	    'new_item_name' => __( 'New Material' ),
+	  ); 
+
+		register_taxonomy(
+		'materials',
+		'artworks',
+			array( 'hierarchical' => true,
+			'labels' => $labels,
+			'query_var' => true,
+			'show_ui' => true,
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'rewrite' => array( 'slug' => 'materials',
+								'with_front' => false,
+								'hierarchical' => 'true',
+								) ) );							
 								}
 							endif;
 

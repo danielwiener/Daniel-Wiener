@@ -89,6 +89,7 @@ function _s_setup() {
 	add_theme_support('post-thumbnails');
 	add_image_size('slideshow-large', 9999, 500, false); //this is to make image 500 pixels high for the slideshow pro
 	add_image_size('pinky', 40, 40, true); // for pinky previews
+	add_image_size('tn_100', 100, 100, true); // for pinky previews
 	add_image_size('tn-200', 200, 200, true); // just in case  
    	add_image_size('tn-300', 300, 300, true); // just in case
    	}
@@ -281,7 +282,6 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 		'pages'      => array( 'post', ), // Post type
 		'context'    => 'normal',
 		'priority'   => 'high',
-	   	// 'show_on' => array( 'key' => 'page-template', 'value' => array( 'page-feed.php', 'page-upcoming-exhibitions.php' ) ), //only shows on artwork pages, maybe figure out how to do parent page - Sculpture
 		'show_names' => true, // Show field names on the left
 		'fields'     => array(
 			array(
@@ -301,7 +301,7 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 		
 		$dw_meta_boxes[] = array(
 			'id'         => 'titles_metabox',
-			'title'      => 'Titles Info',
+			'title'      => 'Artwork Info',
 			'pages'      => array( 'titles', 'artworks'), // Post type
 			'context'    => 'normal',
 			'priority'   => 'high',
@@ -317,6 +317,24 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 					'name' => 'URL of Sculpture',
 					'desc' => 'Enter the <u>relative url</u> of the sculpture. http://danielwiener.dev or .com is included.',
 					'id'   => $prefix . 'sculpture_url',
+					'type' => 'text',
+				),
+				array(
+					'name' => 'Date of Piece',
+					'desc' => 'Enter the year of the sculpture or other piece. 4 digits, e.g. 1998 or 2012. Using this to order images. (Maybe)',
+					'id'   => $prefix . 'artwork_year',
+					'type' => 'text',
+				),
+				array(
+					'name' => 'Dimension (inches)',
+					'desc' => 'Add the dimensions in inches',
+					'id'   => $prefix . 'artwork_dimensions',
+					'type' => 'text',
+				),
+				array(
+					'name' => 'Materials',
+					'desc' => 'Add the materials',
+					'id'   => $prefix . 'artwork_materials',
 					'type' => 'text',
 				),
 			),

@@ -25,20 +25,6 @@ David Brody, in a wonderful article, writes "Wiener's exploratory, morph-or-die 
 <h2><a href="http://www.danielwiener.com/is/news/video-of-making-is-thinking-lesley-heller-2011" target="_blank">Making is Thinking Video Tour</a></h2>
 <p> by James Kalm/Lauren Monk, ArtReview.com<br />
 A walk-through of my recent show at Lesley Heller Workspace, in April.</p>
-
-<h1>Galleries</h1>
-<h2><a href="http://www.lesleyheller.com/" target="_blank">Lesley Heller Workspace</a></h2>
-<p>
-54 Orchard Street<br />
-New York, NY 10002<br />
-t 212 410 6120</p>
-    <h2><a href="http://shop.artwelove.com/artist/Daniel-Wiener">ArtWeLove</a></h2>
-    <p><strong>Three Editions</strong><br />
-   <a href="http://shop.artwelove.com/artwork/Sculpture-Adrift">Sculpture, Adrift</a><br />
-   <a href="http://shop.artwelove.com/artwork/Sutro-Baths">Near the Ruins of the Sutro Baths</a><br />
-   <a href="http://shop.artwelove.com/artwork/Red-Leaf">Red Leaf</a> 
-   </p>
-   <p><a href="http://shop.artwelove.com/artist/Daniel-Wiener">ArtWeLove</a> presents "curated limited editions, by some of the best artists living today, irresistibly priced for every budget."</p>
  </div>
 
 <div class="column1">
@@ -88,20 +74,6 @@ t 212 410 6120</p>
 								<?php endif ?>
 <?php endif ?>
 <?php endwhile; ?>
-
-
-
-<h1>Materials</h1>
-<h2><a href="http://www.avesstudio.com/index.php?page=shop.product_details&product_id=28&flypage=flypage.tpl&pop=0&option=com_virtuemart&Itemid=4&vmcchk=1&Itemid=4" target="_blank">Apoxie Sculpt</a></h2>
-<p>Apoxie-Sculpt is a self-hardening clay manufactured by Aves Studios.</p>
-<h2><a href="http://www.polytek.com/cart/index.php?target=categories&category_id=166" target="_blank">Polytek - Liquid Mold Rubber</a></h2>
-<p>I use Polytek 74-30 for poured rubber molds and Polygel 40 or 50 for brush-on molds.
-</p>
-<h2><a href="http://www.aquaresin.com/" target="_blank">Aqua-Resin</a></h2>
-<p>Aqua-Resin (created by an artist) is an easy to use, opaque, non-toxic composite fabricating resin. It is usually used as a casting material but I use it direct, either brushing it or pouring it over a form.</p>
-<h2><a href="http://www.pilchuck.com/" target="_blank">Pilchuck</a></h2>
-<p>All the glass seen in my sculptures was produced at Pilchuck Glass School over several weeks during an artist-in-residency. Pilchuck, generously, asks artists to their campus to explore what glass can do. It was a tremendous and productive experience.</p>
-
 </div>
 
 <div class="column1">
