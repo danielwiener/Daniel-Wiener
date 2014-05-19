@@ -55,27 +55,8 @@
 </div>
 
 <div class="column1">
-
-<h1>Tutorials</h1>
-<ul>
-<li><a href="/is/projects/artist_website">Creating Artist Website, Step by Step</a></li>
-<li><a href="/is/online_resources_artists/email-announcement-tutorial">Etiquette of Artist Email Announcements</a></li>
-<li><a href="/is/online_resources_artists/dropio-upload-hi-res-images">Using Drop.io to Upload Hi-Res Images</a></li>
-<li><a href="/is/tutorials/create_virtual_host_mac">Virtual Hosting on OS 10.5</a></li>
-<li><a href="/is/open_source_sculpture/sculpture-center-trash-cans">Sculpture Center - Trash Cans</a></li>
-<li><a href="/is/open_source_sculpture/algorithm-for-a-crazy-vase">Algorithm for a Crazy Vase</a></li>
-<li><a href="/is/open_source_sculpture/blooming">Making a Green Vase</a></li>
-</ul>
-<h1>More Info</h1>
-<ul>
-<li><a href="/is/resume">Resume</a></li>
-<li><a href="/is/statement">Statement</a></li>
-<li><a href="/is/projects/open_source_sculpture">Projects</a></li>
-<li><a href="/art/pages/links">Links</a></li>
-</ul>
-
-
-
+	<?php if ( ! dynamic_sidebar( 'footer-column-3' ) ) : ?>
+		<?php endif; ?>
 </div><br clear="both"/>
 
 </div><!-- subfooter page end-->
