@@ -143,7 +143,17 @@ function _s_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name' => __( 'Footer Column 1', '_s' ),
+			'description' => __('Add text or image for lefthand column of the subfooter', '_s'),
 		'id' => 'footer-column-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Footer Column 3', '_s' ),
+		'description' => __('Add text or image for righthand column of the subfooter', '_s'),
+		'id' => 'footer-column-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h1 class="widget-title">',
