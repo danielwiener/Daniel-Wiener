@@ -12,7 +12,7 @@
  * @since _s 1.0
  */
 if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	// $content_width = 640; /* pixels */
 
 if ( ! function_exists( '_s_setup' ) ):
 /**
@@ -50,6 +50,12 @@ function _s_setup() {
 	 * Custom Theme Options
 	 */
 	require( get_template_directory() . '/inc/theme-options/theme-options.php' );
+	
+	
+	/**
+	 * Navwalker
+	 */
+	require( get_template_directory() . '/lib/wp_bootstrap_navwalker.php' );
 
 	/**
 	 * WordPress.com-specific functions and definitions
@@ -431,7 +437,7 @@ function dw_metaboxes( array $dw_meta_boxes ) {
 					'name' => 'Slide Order',
 					'desc' => 'Enter number for slide order ',
 					'id'   => $prefix . 'slide_order',
-					'type' => 'text_small',
+					'type' => 'text',
 				),
 			),
 	);
@@ -539,22 +545,6 @@ add_filter("mce_buttons_3", "add_more_buttons");
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
 // add google analytics to footer
-function add_google_analytics() {
-echo '<script type="text/javascript">';
-echo "\n";
-echo '  var _gaq = _gaq || [];';
-echo '  _gaq.push(["_setAccount", "UA-11392590-1"]);';
-echo '  _gaq.push(["_trackPageview"]);';
-echo "\n";
-echo '  (function() {';
-echo '    var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;';
-echo '    ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";';
-echo '    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);';
-echo '  })();';
-echo "\n";
-echo '</script>';
-}
-add_action('wp_footer', 'add_google_analytics');
 
 
 // Add custom taxonomies and custom post types counts to dashboard
