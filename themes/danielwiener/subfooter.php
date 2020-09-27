@@ -5,7 +5,7 @@
 		<?php endif; ?>
  </div>
 
-<div class="column1">
+<div class="column2">
 <h1><a href="<?php echo bloginfo('siteurl') . '/exhibits'; ?>">Exhibitions</a></h1>
 <?php 
 	$args = array(
@@ -22,22 +22,13 @@
 <?php if ( get_post_meta($post->ID, "_dw_is_in_subfooter", $single = true)): ?>
 <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 
-	
-
-
 <?php include('inc/exhibits_functions.php'); ?>
 
 <ul>
-								<li><?php echo $exhibits_duration; ?>, <a href="/is/years/<?php echo $dw_year_slug; ?>"><?php echo $dw_year_name ?></a></li>
-								<?php echo $exhibits_opening; ?>
-								<?php echo $exhibits_curator; ?>
-									<li><?php if ($venue_url): ?>
-									<a href="<?php echo $venue_url ?>">	
-									<?php endif ?>
-								<?php echo $venue_name; ?>
-									<?php if ($venue_url): ?>
-										</a>
-									<?php endif ?></li>
+<li><?php echo $exhibits_duration; ?>, <a href="/is/years/<?php echo $dw_year_slug; ?>"><?php echo $dw_year_name ?></a></li>
+<li><?php echo $exhibits_opening; ?></li>
+<li><?php echo $exhibits_curator; ?></li>
+<li><?php if ($venue_url): ?><a href="<?php echo $venue_url ?>"><?php endif; ?><?php echo $venue_name; ?><?php if ($venue_url): ?></a><?php endif ?></li>
 								<li><?php echo $venue_address; ?></li>
 								<?php $dw_state_display = ($dw_state_count > 1) ? '<a href="/is/state/' . $dw_state_slug . '">' . $dw_state_name . '</a>'  : $dw_state_name ; ?>
 								<?php $dw_city_display = ($dw_city_count > 1) ? '<a href="/is/city/' . $dw_city_slug . '">' . $dw_city_name . '</a>'  : $dw_city_name ; ?>
@@ -54,7 +45,7 @@
 <?php endwhile; ?>
 </div>
 
-<div class="column1">
+<div class="column3">
 	<?php if ( ! dynamic_sidebar( 'footer-column-3' ) ) : ?>
 		<?php endif; ?>
 </div><br clear="both"/>
