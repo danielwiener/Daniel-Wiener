@@ -35,33 +35,70 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_directory'); ?>/css/tabs_slideshow.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_directory'); ?>/css/bootstrap.css" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-<script type="text/javascript" src="http://use.typekit.com/ogu3erd.js"></script>
+<script type="text/javascript" src="https://use.typekit.com/ogu3erd.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <?php wp_head(); ?>  
-
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/bootstrap.js"></script>
 
 </head>
 
 <body <?php body_class(); ?>>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="<?php echo home_url(); ?>">
+	                <?php bloginfo('name'); ?>
+	            </a>
+	    </div>
+
+	        <?php // http://stackoverflow.com/questions/25332527/convert-bootstrap-navbar-to-wordpress-menu
+				// https://github.com/twittem/wp-bootstrap-navwalker
+	            wp_nav_menu( array(
+	                'menu'              => 'primary',
+	                'theme_location'    => 'primary',
+	                'depth'             => 2,
+	                'container'         => 'div',
+	                'container_class'   => 'collapse navbar-collapse',
+	        'container_id'      => 'bs-example-navbar-collapse-1',
+	                'menu_class'        => 'nav navbar-nav',
+	                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+	                'walker'            => new wp_bootstrap_navwalker())
+	            );
+	        ?>
+	    </div>
+	</nav>
 <div id="container">
+		
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
+	<!-- <header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		</hgroup>
+		</hgroup> -->
+		
+	
+		
+<!-- OLD NAV -->
+		<!-- <nav role="navigation" class="site-navigation main-navigation">
+			<h1 class="assistive-text"><?// php _e( 'Menu', '_s' ); ?></h1>
+			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?// php _e( 'Skip to content', '_s' ); ?></a></div>
 
-		<nav role="navigation" class="site-navigation main-navigation">
-			<h1 class="assistive-text"><?php _e( 'Menu', '_s' ); ?></h1>
-			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav>
-	</header><!-- #masthead .site-header -->
+			<?php // wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav> -->
+	<!-- </header> --><!-- #masthead .site-header -->
       <!-- <div class=decoration>&nbsp;</div> -->
 	<div id="main">
