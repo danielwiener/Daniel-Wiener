@@ -9,8 +9,8 @@
  */
 
  $exhibits_duration =  get_post_meta($post->ID, "_dw_duration", $single = true);?>
-	<?php $exhibits_opening =  get_post_meta($post->ID, "_dw_opening", $single = true) ? '<li>Opening: ' . get_post_meta($post->ID, "_dw_opening", $single = true) . '</li>' : ''; ?>
-	<?php $exhibits_curator =  get_post_meta($post->ID, "_dw_curated_by", $single = true) ? '<li>' . get_post_meta($post->ID, "_dw_curated_by", $single = true) . '</li>' : ''; ?>
+	<?php $exhibits_opening =  get_post_meta($post->ID, "_dw_opening", $single = true) ? 'Opening: ' . get_post_meta($post->ID, "_dw_opening", $single = true) : ''; ?>
+	<?php $exhibits_curator =  get_post_meta($post->ID, "_dw_curated_by", $single = true) ? get_post_meta($post->ID, "_dw_curated_by", $single = true) : ''; ?>
 	<?php $venue_list = wp_get_post_terms($post->ID, 'venues', array("fields" => "all"));
 								 								foreach ($venue_list as $venue) {
 								 								$venue_name = $venue->name;
