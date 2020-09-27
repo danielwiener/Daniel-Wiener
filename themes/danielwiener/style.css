@@ -48,15 +48,16 @@ html {
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-	background: #DDD url(images/drawing3.jpg) repeat fixed 0px -250px;
-	/*background: #DDD url(images/faces02.jpg) no-repeat fixed 0px -150px;*/
-	  /*-webkit-background-size: cover;
-	  	  -moz-background-size: cover;
-	  	  -o-background-size: cover;
-	  	  background-size: cover;*/
-
+	/*background: #DDD url(images/beasts-confession-med.jpg) repeat fixed 0px -210px;*/
+/*background: #DDD url(images/faces02.jpg) no-repeat fixed 0px -150px;*/
+background: #fff;
+	  -webkit-background-size: cover;
+	  	  	  -moz-background-size: cover;
+	  	  	  -o-background-size: cover;
+	  	  	  background-size: cover;
+padding-top: 70px; 
 	}
-}
+
 article,
 aside,
 details,
@@ -380,51 +381,51 @@ a:active {
 	padding: 10px; 
 	clear: both; 
 	margin-top: 30px;
-    background-color: rgba(220, 220, 222, 0.8); 
+    /*background-color: rgba(220, 220, 222, 0.8);*/ 
    	   
   /*  	opacity:0.8;
   		-moz-opacity: 0.8;
   		filter:alpha(opacity=0.8);*/ 
-	border: 1px solid black;
+/*	border: 1px solid black;*/
 	width:  700px; 
 	/*display: block;*/
-	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+/*	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 	 	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);*/
 } 
 
 #full-width {
 	padding: 10px; 
 	clear: both; 
 	margin-top: 30px;
-    background-color: rgba(220, 220, 222, 0.8); 
+    /*background-color: rgba(220, 220, 222, 0.8);*/ 
    	   
   /*  	opacity:0.8;
   		-moz-opacity: 0.8;
   		filter:alpha(opacity=0.8);*/ 
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	width:  940px; 
 	/*display: block;*/
-	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+/*	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 	 	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);*/
 }
 
 #front-page {
 	padding: 10px; 
 	clear: both; 
-	margin-top: 30px;
-    background-color: rgba(220, 220, 222, 0.8); 
+	margin-top: 0px;
+    /*background-color: rgba(220, 220, 222, 0.8); */
    	   
   /*  	opacity:0.8;
   		-moz-opacity: 0.8;
   		filter:alpha(opacity=0.8);*/ 
-	border: 1px solid black;
-	width:  940px; 
+	/*border: 1px solid black;*/
+	width:  1100px; 
 	/*display: block;*/
-	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+/*	-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 	 	-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);*/
 }
 
 /*div.decoration { 
@@ -444,6 +445,18 @@ a:active {
 #image_grid img {
 	margin: 0;
 	padding: 0 5px 5px 0 !important;
+	max-width: 100%;
+}
+
+
+
+.images img, .images div img{
+width: 100%;
+height: auto;
+}
+
+#main {
+	min-height: 650px;
 }
 
 /* =Header
@@ -470,7 +483,13 @@ hgroup {
 }
 
 /* =Menu
------------------------------------------------ */   
+----------------------------------------------- */  
+/*this is for bootstrap nav*/
+.navbar-default {
+	/*background-color: #F1A6CC;*/
+	background-color: #Fff;
+}
+ 
 .menu-primary-menu-container { 
 /*	line-height: 42px;*/
 	padding: 0 0 0 30px;
@@ -820,9 +839,10 @@ h1.widget-title {
 ----------------------------------------------- */
 
 #subfooter {
-background-color: #908F82;
+/*background-color: #908F82;*/
+/*background-color: rgba(200, 200, 260, 0.9);*/ 
 display: block;
-border-top: 1px solid #666;
+/*border: 1px solid red;*/
 clear: both;
 }
 
@@ -868,12 +888,12 @@ text-align: left;
 /* border: 1px solid #eee; */
 }
 
-#subfooter .column1 {
+#subfooter .column1, #subfooter .column2, #subfooter .column3 {
 width: 32%;
 float:left;
 }
 
-#subfooter .column1 h1 {
+#subfooter .column1 h1, #subfooter .column2 h1, #subfooter .column3 h1 {
 padding: 5px 0 5px 5px;
 margin: 0px;
 font-size: 25px;
@@ -884,13 +904,13 @@ border: 1px solid #000;
 width: 300px;*/
 }
 
-#subfooter .column1 h2 {
+#subfooter .column1 h2, #subfooter .column2 h2, #subfooter .column3 h2 {
 padding: 5px 0 0 30px;
 margin: 0px;
 font-size: 16px;
 }
 
-#subfooter .column1 p {
+#subfooter .column1 p, #subfooter .column2 p, #subfooter .column3 p {
 padding: 0px 20px 10px 30px;
 margin: 0px;
 }
@@ -900,10 +920,11 @@ margin: 0px;
 ----------------------------------------------- */  
 .site-footer {
 /*	height: 50px;*/
-	background: #000;
-	color: #fff;
+	background: #fff;
+	color: #000;
 	font-size: 12px; 
-	   line-height: 40px;  
+	   line-height: 40px; 
+	width: 100%; 
 }  
 
 .site-footer a:link, .site-footer a:visited { 
@@ -932,4 +953,140 @@ div.site-info {
 #resume ul {
 	list-style: none;
 	margin: 0 0 0 0;
+}
+
+/* =additions for bootstrap DW
+-------------------------------------------------------------- */
+.navbar {
+
+}
+
+.container-fluid {
+		max-width: 900px;
+	}
+		
+@media (max-width:414px) {
+	.container-fluid {
+		/*	max-width: 350px;*/
+		max-width: 100%;
+		}
+	
+	#full-width, #container, #front-page, #primary  {
+		max-width: 375px;
+	}
+	#colophon {
+		width: 100%;
+		padding-left: 10px;
+	}
+	
+	.site-content {
+		margin: 0 !important;
+	}
+	
+	#image_grid img {
+	max-width: 48%;
+	}
+	
+	h1.page-title {
+		width: 350px;
+		margin: 0px !important;
+	}
+	
+	div.site-info {
+		width: 100%;
+
+	}
+	#subfooter {
+		width: 100%;
+	}
+	#subfooter .column1, #subfooter .column3 {
+		display: none;
+	}
+	#subfooter .column2 {
+		width: 100%;
+	}
+	
+	.slide_container {
+		height: 180px;
+	}
+	
+	.images, .images div{ 
+		height: 200px;
+	}
+	
+	.slidetabs {
+	    clear: both;
+	    margin-left: 100px;
+	}
+	
+		body {
+		    /*background: url("images/beasts-confession-med.jpg") top center no-repeat;*/
+		background-attachment:none !important; 
+/*background: #DDD !important;*/
+
+		    padding-top: 70px;
+		}
+		#main {
+			min-height: 320px;
+		}
+	#secondary {
+		width: 95%;
+		}	
+	
+}
+
+.ms-item img, .ms-item-drawing img{
+	width: 100%;
+	height: auto;
+}
+
+
+
+.ms-item {
+/*width: 92%;*/
+padding:   0 4% 0 4%;
+margin-bottom:10px;
+
+}
+
+@media screen and (min-width: 600px){
+/* Makes two columns */
+.ms-item {
+width: 45%;
+padding:    0px 2% 0 0px;
+margin-right:2%;
+margin-bottom:0px;
+/*border: 1px solid #999;*/
+}
+
+}
+@media screen and (min-width: 768px){
+/* Makes 2 columns */
+.ms-item {
+width: 49%;
+margin-right:0%;
+margin-bottom:0px;
+padding:    2% 2% 0 0px;
+/*border: 1px solid #999;*/
+}
+
+@media screen and (min-width: 900px){
+/* Makes three columns */
+.ms-item {
+width: 48%;
+margin-right:0%;
+margin-bottom:0px;
+padding:    2% 2% 0 0px;
+}
+.ms-item-drawing {
+width: 48%;
+margin-right:0%;
+margin-bottom:0px;
+padding:    0px 2% 0 0px;
+/*border: 1px solid #999;*/
+}
+
+#frontpage {
+	width: 100%;
+	border: 1px solid red;
 }
