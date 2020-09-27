@@ -29,8 +29,8 @@ get_header(); ?>
 					$make_args = array(
 					    'posts_per_page'  => -1,
 						'meta_key' 		 => '_dw_artwork_year',
-						'orderby'         => 'meta_value_num',  //change this once you add years
-						'order'           => 'DESC',
+						'orderby'         => array( 'meta_value_num' => 'DESC', 'title' => 'ASC' ),  //change this once you add years
+						// 'order'           => 'DESC',
 					    'post_type'       => 'artworks',
 						'post_status'	=> 'publish',
 						'make'			=> $this_make->slug
