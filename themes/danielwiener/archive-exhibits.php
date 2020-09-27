@@ -54,9 +54,9 @@ get_header(); ?>
 							<small><a href="/is/exhibit_type/<?php echo $exhibit_type_slug ?>">[<?php echo $exhibit_type->name; ?>]</a></small>
 							<ul>
 							<li><?php echo $exhibits_duration; ?>, <a href="/is/years/<?php echo $dw_year_slug; ?>"><?php echo $dw_year_name ?></a></li>
-							<?php echo $exhibits_opening; ?>
-							<?php echo $exhibits_curator; ?>
-							<li>&nbsp;</li>
+							<li><?php echo $exhibits_opening; ?></li>
+							<li><?php echo $exhibits_curator; ?></li>
+							
 								<li><?php if ($venue_url): ?>
 								<a href="<?php echo $venue_url ?>">	
 								<?php endif ?>
